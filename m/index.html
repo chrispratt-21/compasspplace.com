@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Compass Place — Tour Messages</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #f4f5f6;
+      color: #1a1a1a;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .header {
+      background: #1B4D4F;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+    .header img { width: 36px; height: 36px; border-radius: 8px; }
+    .header-text { color: #fff; }
+    .header-text h1 {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 16px; font-weight: 600; margin: 0;
+    }
+    .header-text p { font-size: 11px; opacity: 0.8; margin-top: 2px; }
+
+    .tour-info {
+      background: #fff;
+      border-bottom: 1px solid #e8e8e8;
+      padding: 14px 20px;
+      flex-shrink: 0;
+    }
+    .tour-info h2 {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 15px; font-weight: 600; color: #1B4D4F;
+    }
+    .tour-info .meta { font-size: 12px; color: #888; margin-top: 4px; }
+    .tour-info .status {
+      display: inline-block; padding: 2px 8px; border-radius: 4px;
+      font-size: 11px; font-weight: 600; margin-left: 8px;
+    }
+    .status-confirmed { background: #e8f5e9; color: #2e7d32; }
+    .status-active { background: #fff3e0; color: #e65100; }
+
+    .messages {
+      padding: 16px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1;
+      overflow-y: auto;
+      padding-bottom: 90px;
+    }
+
+    .msg {
+      max-width: 85%;
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-size: 14px;
+      line-height: 1.4;
+      word-wrap: break-word;
+    }
+    .msg-user {
+      align-self: flex-start;
+      background: #e3f2fd;
+      color: #1a1a1a;
+      border-bottom-left-radius: 4px;
+    }
+    .msg-facility {
+      align-self: flex-end;
+      background: #1B4D4F;
+      color: #fff;
+      border-bottom-right-radius: 4px;
+    }
+    .msg-sender {
+      font-size: 11px;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+    .msg-facility .msg-sender { opacity: 0.7; }
+    .msg-user .msg-sender { color: #1565c0; }
+    .msg-time {
+      font-size: 10px;
+      opacity: 0.5;
+      margin-top: 4px;
+    }
+
+    .compose {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      background: #fff;
+      border-top: 1px solid #e8e8e8;
+      padding: 12px 16px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-end;
+    }
+    .compose textarea {
+      flex: 1;
+      padding: 10px 14px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 14px;
+      resize: none;
+      min-height: 42px;
+      max-height: 120px;
+      outline: none;
+    }
+    .compose textarea:focus { border-color: #1B4D4F; }
+    .compose button {
+      background: #1B4D4F;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 10px 18px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .compose button:disabled { background: #ccc; cursor: default; }
+    .compose button:hover:not(:disabled) { opacity: 0.9; }
+
+    .page-state {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .page-state p { color: #888; font-size: 14px; margin-top: 12px; line-height: 1.5; }
+    .page-state h2 { font-size: 18px; margin-bottom: 8px; }
+    .page-state.error h2 { color: #c62828; }
+    .page-state.expired h2 { color: #1B4D4F; }
+
+    .empty-messages {
+      text-align: center;
+      padding: 40px 20px;
+      color: #999;
+      font-size: 14px;
+    }
+    .send-error {
+      font-size: 11px;
+      color: #c62828;
+      text-align: center;
+      padding: 4px 16px;
+      position: fixed;
+      bottom: 70px;
+      left: 0; right: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <img src="/icon-192.png" alt="Compass Place">
+    <div class="header-text">
+      <h1>Compass Place</h1>
+      <p>Tour Messages</p>
+    </div>
+  </div>
+
+  <div id="tour-info" class="tour-info" style="display:none;"></div>
+
+  <div id="loading" class="page-state">
+    <p>Loading messages...</p>
+  </div>
+
+  <div id="error" class="page-state error" style="display:none;">
+    <h2>Unable to load messages</h2>
+    <p id="error-text">This link may have expired or is invalid.</p>
+  </div>
+
+  <div id="expired" class="page-state expired" style="display:none;">
+    <h2>Tour Completed</h2>
+    <p>This tour has been completed and messages are no longer available here.<br>Thank you for being a Compass Place partner!</p>
+  </div>
+
+  <div id="messages" class="messages" style="display:none;"></div>
+
+  <div id="compose" class="compose" style="display:none;">
+    <textarea id="reply-input" placeholder="Type your message..." rows="1"
+      oninput="this.style.height='auto'; this.style.height=Math.min(this.scrollHeight,120)+'px';"></textarea>
+    <button id="send-btn" onclick="sendReply()" disabled>Send</button>
+  </div>
+
+  <div id="send-error" class="send-error" style="display:none;"></div>
+
+<script>
+(function() {
+  var API_BASE = 'https://ynfcuxlmowbfcrrulsap.supabase.co/functions/v1/tour-messages-api';
+  var ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InluZmN1eGxtb3diZmNycnVsc2FwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjg0NDQ3NzAsImV4cCI6MjA0NDAxMjc3MH0.YOzrWMBMIFpIFHt5WKXBP_xFOT__Yc-4YT3F3NG5fP4';
+
+  var params = new URLSearchParams(window.location.search);
+  var shortCode = params.get('t');
+  var webToken = params.get('k');
+
+  if (!shortCode || !webToken) {
+    showError('This link appears to be invalid. Please check the link from your text message.');
+    return;
+  }
+
+  var apiUrl = API_BASE + '?t=' + encodeURIComponent(shortCode) + '&k=' + encodeURIComponent(webToken);
+  var userName = 'Family';
+  var facilityName = 'You';
+
+  // Common headers — Supabase gateway requires apikey even with JWT verification off
+  var apiHeaders = {
+    'apikey': ANON_KEY,
+    'Authorization': 'Bearer ' + ANON_KEY,
+  };
+
+  init();
+
+  async function init() {
+    try {
+      var resp = await fetch(apiUrl, { method: 'GET', headers: apiHeaders });
+      var data = await resp.json();
+
+      if (resp.status === 410) {
+        document.getElementById('loading').style.display = 'none';
+        document.getElementById('expired').style.display = 'flex';
+        return;
+      }
+
+      if (!resp.ok) {
+        showError(data.error || 'Unable to load messages.');
+        return;
+      }
+
+      var tour = data.tour;
+      userName = data.user_name || 'Family';
+      facilityName = data.facility_contact_name || 'You';
+
+      // Tour info bar
+      var statusClass = ['confirmed', 'user_accepted'].includes(tour.status) ? 'status-confirmed' : 'status-active';
+      var statusLabel = {
+        'pending': 'Pending', 'awaiting_response': 'Awaiting Response',
+        'facility_proposed': 'Time Proposed', 'confirmed': 'Confirmed',
+        'user_accepted': 'Confirmed', 'escalated_to_trail_guide': 'Coordinating',
+      }[tour.status] || tour.status;
+
+      var dateInfo = '';
+      if (tour.confirmed_date) {
+        try {
+          var d = new Date(tour.confirmed_date + 'T12:00:00Z');
+          dateInfo = d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', timeZone: 'UTC' });
+          if (tour.confirmed_time) dateInfo += ' at ' + tour.confirmed_time;
+        } catch(e) {}
+      }
+
+      document.getElementById('tour-info').innerHTML =
+        '<h2>' + esc(tour.facility_name || 'Tour') +
+        ' <span class="status ' + statusClass + '">' + statusLabel + '</span></h2>' +
+        '<div class="meta">' +
+          'Resident: ' + esc(tour.pr_first_name || 'N/A') +
+          ' &middot; Family: ' + esc(userName) +
+          (dateInfo ? ' &middot; ' + dateInfo : '') +
+          ' &middot; Code: ' + esc(tour.short_code || '') +
+        '</div>';
+      document.getElementById('tour-info').style.display = 'block';
+
+      renderMessages(data.messages);
+
+      document.getElementById('compose').style.display = 'flex';
+      document.getElementById('loading').style.display = 'none';
+
+      document.getElementById('reply-input').addEventListener('input', function() {
+        document.getElementById('send-btn').disabled = !this.value.trim();
+      });
+
+      document.getElementById('reply-input').addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' && !e.shiftKey) {
+          e.preventDefault();
+          if (this.value.trim()) sendReply();
+        }
+      });
+
+      // Poll every 8 seconds
+      setInterval(async function() {
+        try {
+          var r = await fetch(apiUrl, { method: 'GET', headers: apiHeaders });
+          if (r.ok) {
+            var d = await r.json();
+            renderMessages(d.messages);
+          }
+        } catch(e) {}
+      }, 8000);
+
+    } catch (err) {
+      console.error('Init error:', err);
+      showError('Something went wrong. Please try again later.');
+    }
+  }
+
+  function renderMessages(messages) {
+    var container = document.getElementById('messages');
+    var relayMsgs = (messages || []).filter(function(m) { return m.message_type === 'relay'; });
+
+    if (relayMsgs.length === 0) {
+      container.innerHTML = '<div class="empty-messages">No messages yet. Send the first message below.</div>';
+    } else {
+      container.innerHTML = relayMsgs.map(function(msg) {
+        var isFacility = msg.sender === 'facility';
+        var cls = isFacility ? 'msg-facility' : 'msg-user';
+        var senderLabel = isFacility
+          ? (msg.sender_name || facilityName)
+          : (msg.sender_name || userName + '\'s family');
+
+        return '<div class="msg ' + cls + '">' +
+          '<div class="msg-sender">' + esc(senderLabel) + '</div>' +
+          esc(msg.content || '') +
+          '<div class="msg-time">' + fmtTime(msg.created_at) + '</div>' +
+        '</div>';
+      }).join('');
+    }
+
+    container.style.display = 'flex';
+    requestAnimationFrame(function() {
+      container.scrollTop = container.scrollHeight;
+    });
+  }
+
+  window.sendReply = async function() {
+    var input = document.getElementById('reply-input');
+    var btn = document.getElementById('send-btn');
+    var text = input.value.trim();
+    if (!text) return;
+
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+
+    try {
+      var resp = await fetch(apiUrl, {
+        method: 'POST',
+        headers: Object.assign({ 'Content-Type': 'application/json' }, apiHeaders),
+        body: JSON.stringify({ message: text }),
+      });
+
+      if (!resp.ok) {
+        var errData = await resp.json();
+        throw new Error(errData.error || 'Send failed');
+      }
+
+      input.value = '';
+      input.style.height = 'auto';
+      btn.textContent = 'Send';
+
+      // Refresh
+      var r = await fetch(apiUrl, { method: 'GET', headers: apiHeaders });
+      if (r.ok) {
+        var d = await r.json();
+        renderMessages(d.messages);
+      }
+
+    } catch (err) {
+      console.error('Send error:', err);
+      btn.textContent = 'Send';
+      btn.disabled = false;
+      var el = document.getElementById('send-error');
+      el.textContent = 'Failed to send. Please try again.';
+      el.style.display = 'block';
+      setTimeout(function() { el.style.display = 'none'; }, 4000);
+    }
+  };
+
+  function showError(text) {
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('error-text').textContent = text;
+    document.getElementById('error').style.display = 'flex';
+  }
+
+  function esc(str) {
+    var d = document.createElement('div');
+    d.textContent = str;
+    return d.innerHTML;
+  }
+
+  function fmtTime(iso) {
+    if (!iso) return '';
+    try {
+      var d = new Date(iso);
+      return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) +
+        ' ' + d.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
+    } catch(e) { return ''; }
+  }
+})();
+</script>
+
+</body>
+</html>
