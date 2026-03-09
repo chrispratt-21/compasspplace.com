@@ -2,32 +2,140 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://compassplace.com/</loc>
-    <lastmod>2026-02-23</lastmod>
-    <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://compassplace.com/get</loc>
-    <lastmod>2026-02-23</lastmod>
-    <priority>0.9</priority>
+    <loc>https://compassplace.com/faq/</loc>
   </url>
   <url>
-    <loc>https://compassplace.com/faq</loc>
-    <lastmod>2026-02-23</lastmod>
-    <priority>0.8</priority>
+    <loc>https://compassplace.com/get/</loc>
   </url>
   <url>
-    <loc>https://compassplace.com/privacy-policy</loc>
-    <lastmod>2026-01-22</lastmod>
-    <priority>0.5</priority>
+    <loc>https://compassplace.com/terms-of-service/</loc>
   </url>
   <url>
-    <loc>https://compassplace.com/terms-of-service</loc>
-    <lastmod>2026-01-22</lastmod>
-    <priority>0.5</priority>
+    <loc>https://compassplace.com/senior-living/</loc>
   </url>
   <url>
-    <loc>https://compassplace.com/sms-consent</loc>
-    <lastmod>2026-02-23</lastmod>
-    <priority>0.3</priority>
+    <loc>https://compassplace.com/senior-living/indiana/</loc>
+  </url>
+  <url>
+    <loc>https://compassplace.com/senior-living/indiana/hamilton-county-indiana/</loc>
+  </url>
+  <url>
+    <loc>https://compassplace.com/senior-living/indiana/hamilton-county-indiana/carmel-indiana/</loc>
+  </url>
+  <url>
+    <loc>https://compassplace.com/senior-living/indiana/hamilton-county-indiana/fishers-indiana/</loc>
+  </url>
+  <url>
+    <loc>https://compassplace.com/senior-living/indiana/hamilton-county-indiana/noblesville-indiana/</loc>
+  </url>
+  <url>
+    <loc>https://compassplace.com/senior-living/indiana/hamilton-county-indiana/sheridan-indiana/</loc>
+  </url>
+  <url>
+    <loc>https://compassplace.com/senior-living/indiana/hamilton-county-indiana/westfield-indiana/</loc>
+  </url>
+  <url>
+    <loc>https://compassplace.com/community/allisonville-meadows-assisted-living-fishers-in/</loc>
+  </url>
+  <url>
+    <loc>https://compassplace.com/community/allisonville-meadows-fishers-in/</loc>
+  </url>
+  <url>
+    <loc>https://compassplace.com/community/bickford-of-carmel-carmel-in/</loc>
+  </url>
+  <url>
+    <loc>https://compassplace.com/community/bridgewater-healthcare-center-carmel-in/</loc>
+  </url>
+  <url>
+    <loc>https://compassplace.com/community/brookdale-carmel-carmel-in/</loc>
+  </url>
+  <url>
+    <loc>https://compassplace.com/community/carmel-health-and-living-community-carmel-in/</loc>
+  </url>
+  <url>
+    <loc>https://compassplace.com/community/chapters-living-of-carmel-carmel-in/</loc>
+  </url>
+  <url>
+    <loc>https://compassplace.com/community/copper-trace-westfield-in/</loc>
+  </url>
+  <url>
+    <loc>https://compassplace.com/community/grand-brook-memory-care-of-fishers-fishers-in/</loc>
+  </url>
+  <url>
+    <loc>https://compassplace.com/community/hamilton-trace-fishers-in/</loc>
+  </url>
+  <url>
+    <loc>https://compassplace.com/community/harbour-manor-and-the-lodge-noblesville-in/</loc>
+  </url>
+  <url>
+    <loc>https://compassplace.com/community/heritage-woods-of-noblesville-noblesville-in/</loc>
+  </url>
+  <url>
+    <loc>https://compassplace.com/community/independence-village-of-carmel-carmel-in/</loc>
+  </url>
+  <url>
+    <loc>https://compassplace.com/community/independence-village-of-fishers-east-fishers-in/</loc>
+  </url>
+  <url>
+    <loc>https://compassplace.com/community/independence-village-of-fishers-south-fishers-in/</loc>
+  </url>
+  <url>
+    <loc>https://compassplace.com/community/lake-meadows-senior-assisted-living-fishers-in/</loc>
+  </url>
+  <url>
+    <loc>https://compassplace.com/community/magnolia-springs-bridgewater-carmel-in/</loc>
+  </url>
+  <url>
+    <loc>https://compassplace.com/community/majestic-care-of-carmel-carmel-in/</loc>
+  </url>
+  <url>
+    <loc>https://compassplace.com/community/majestic-care-of-sheridan-sheridan-in/</loc>
+  </url>
+  <url>
+    <loc>https://compassplace.com/community/maple-park-village-westfield-in/</loc>
+  </url>
+  <url>
+    <loc>https://compassplace.com/community/mcgivney-health-care-center-carmel-in/</loc>
+  </url>
+  <url>
+    <loc>https://compassplace.com/community/meadow-brook-senior-living-fishers-in/</loc>
+  </url>
+  <url>
+    <loc>https://compassplace.com/community/prairie-lakes-health-campus-noblesville-in/</loc>
+  </url>
+  <url>
+    <loc>https://compassplace.com/community/riverwalk-village-noblesville-in/</loc>
+  </url>
+  <url>
+    <loc>https://compassplace.com/community/rose-senior-living-carmel-carmel-in/</loc>
+  </url>
+  <url>
+    <loc>https://compassplace.com/community/sanders-glen-assisted-living-westfield-in/</loc>
+  </url>
+  <url>
+    <loc>https://compassplace.com/community/sunrise-on-old-meridian-carmel-in/</loc>
+  </url>
+  <url>
+    <loc>https://compassplace.com/community/the-barrington-of-carmel-carmel-in/</loc>
+  </url>
+  <url>
+    <loc>https://compassplace.com/community/the-crossings-at-noblesville-noblesville-in/</loc>
+  </url>
+  <url>
+    <loc>https://compassplace.com/community/the-restoracy-of-carmel-carmel-in/</loc>
+  </url>
+  <url>
+    <loc>https://compassplace.com/community/the-stratford-carmel-in/</loc>
+  </url>
+  <url>
+    <loc>https://compassplace.com/community/wellbrooke-of-carmel-carmel-in/</loc>
+  </url>
+  <url>
+    <loc>https://compassplace.com/community/wellbrooke-of-westfield-westfield-in/</loc>
+  </url>
+  <url>
+    <loc>https://compassplace.com/community/woodland-terrace-of-carmel-carmel-in/</loc>
   </url>
 </urlset>
