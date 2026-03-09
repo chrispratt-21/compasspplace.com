@@ -67,12 +67,38 @@
     .subhead { color: var(--text-secondary); font-size: 1.05rem; margin-bottom: 12px; }
     .hero-grid { display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 24px; align-items: start; }
     .hero-copy p { margin: 0 0 14px; }
-    .stats-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin-top: 18px; }
-    .stat {
-      padding: 16px; border: 1px solid var(--border); background: var(--muted); border-radius: 14px;
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 18px;
     }
-    .stat-label { font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: var(--text-secondary); margin-bottom: 8px; }
-    .stat-value { font-size: 1.5rem; font-weight: 700; color: var(--primary); }
+    .stat {
+      min-height: 138px;
+      padding: 18px 18px 16px 18px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--muted);
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+    }
+    .stat-label {
+      font-size: 12px;
+      line-height: 1.35;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+    }
+    .stat-value {
+      margin-top: auto;
+      padding-top: 12px;
+      text-align: center;
+      font-size: 2rem;
+      line-height: 1;
+      font-weight: 700;
+      color: var(--primary);
+    }
     .card { padding: 26px; }
     .intro-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 22px; }
     .bullet-list { margin: 0; padding-left: 18px; }
