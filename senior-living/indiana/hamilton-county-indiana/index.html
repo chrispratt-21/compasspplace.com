@@ -275,15 +275,123 @@
         grid-template-columns: 1fr;
       }
     }
-  </style>
+  
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+      line-height: 1.65;
+    }
+    .site-header {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      backdrop-filter: blur(10px);
+    }
+    .nav-wrap {
+      width: min(1160px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 18px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    .brand {
+      font-weight: 800 !important;
+      color: var(--primary) !important;
+      letter-spacing: -0.02em !important;
+      font-size: 1.15rem !important;
+      text-decoration: none;
+    }
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 18px;
+    }
+    .nav-links a {
+      color: var(--text);
+      font-size: 0.98rem;
+      text-decoration: none;
+    }
+    .nav-links a:hover { text-decoration: underline; }
+    .nav-links .cta-link {
+      background: var(--primary);
+      color: #fff;
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+    .nav-links .cta-link:hover {
+      text-decoration: none;
+      background: var(--primary-light);
+    }
+    .site-footer {
+      border-top: 1px solid var(--border);
+      background: #ffffff;
+      margin-top: 12px;
+    }
+    .footer-wrap {
+      width: min(1160px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 28px 0 40px;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+    .footer-tagline {
+      margin: 8px 0 0;
+      color: var(--text-secondary);
+    }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-top: 10px;
+    }
+    .footer-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+    }
+    .footer-links a:hover { text-decoration: underline; }
+    h1 {
+      font-size: clamp(2.25rem, 4.8vw, 3.5rem) !important;
+      line-height: 1.08 !important;
+      letter-spacing: -0.035em !important;
+    }
+    h2 {
+      font-size: clamp(1.55rem, 3vw, 2.1rem) !important;
+      line-height: 1.12 !important;
+      letter-spacing: -0.025em !important;
+    }
+    h3 { letter-spacing: -0.02em !important; }
+    @media (max-width: 860px) {
+      .nav-wrap {
+        padding: 16px 0;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+      .nav-links {
+        gap: 12px 16px;
+      }
+    }
+
+</style>
 </head>
 <body>
-  <header class="topbar">
-    <div class="topbar-inner">
+  
+  <header class="site-header">
+    <div class="nav-wrap">
       <a class="brand" href="https://compassplace.com/">Compass Place</a>
-      <a href="https://compassplace.com/get/">Get the App</a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="https://compassplace.com/senior-living/">Senior Living</a>
+        <a href="https://compassplace.com/resources/">Resources</a>
+        <a href="https://compassplace.com/faq/">FAQ</a>
+        <a href="https://compassplace.com/get/" class="cta-link">Get the App</a>
+      </nav>
     </div>
   </header>
+
 
   <main class="wrap">
     <section class="hero">
@@ -336,7 +444,7 @@
       </div>
 
       <div class="city-block">
-        <div class="city-heading"><a href="/senior-living/indiana/hamilton-county-indiana/carmel-indiana/">Carmel</a></div>
+        <div class="city-heading"><a href="https://compassplace.com/senior-living/indiana/hamilton-county-indiana/carmel-indiana/">Carmel</a></div>
         <div class="community-grid">
           <div class="community-card">
             <h3>Bickford of Carmel</h3>
@@ -467,7 +575,7 @@
       </div>
 
       <div class="city-block">
-        <div class="city-heading"><a href="/senior-living/indiana/hamilton-county-indiana/fishers-indiana/">Fishers</a></div>
+        <div class="city-heading"><a href="https://compassplace.com/senior-living/indiana/hamilton-county-indiana/fishers-indiana/">Fishers</a></div>
         <div class="community-grid">
           <div class="community-card">
             <h3>Allisonville Meadows</h3>
@@ -536,7 +644,7 @@
       </div>
 
       <div class="city-block">
-        <div class="city-heading"><a href="/senior-living/indiana/hamilton-county-indiana/noblesville-indiana/">Noblesville</a></div>
+        <div class="city-heading"><a href="https://compassplace.com/senior-living/indiana/hamilton-county-indiana/noblesville-indiana/">Noblesville</a></div>
         <div class="community-grid">
           <div class="community-card">
             <h3>Harbour Manor & The Lodge</h3>
@@ -581,7 +689,7 @@
       </div>
 
       <div class="city-block">
-        <div class="city-heading"><a href="/senior-living/indiana/hamilton-county-indiana/westfield-indiana/">Westfield</a></div>
+        <div class="city-heading"><a href="https://compassplace.com/senior-living/indiana/hamilton-county-indiana/westfield-indiana/">Westfield</a></div>
         <div class="community-grid">
           <div class="community-card">
             <h3>Copper Trace</h3>
@@ -618,7 +726,7 @@
       </div>
 
       <div class="city-block">
-        <div class="city-heading"><a href="/senior-living/indiana/hamilton-county-indiana/sheridan-indiana/">Sheridan</a></div>
+        <div class="city-heading"><a href="https://compassplace.com/senior-living/indiana/hamilton-county-indiana/sheridan-indiana/">Sheridan</a></div>
         <div class="community-grid">
           <div class="community-card">
             <h3>Majestic Care of Sheridan</h3>
@@ -638,10 +746,22 @@
     </section>
   </main>
 
-  <footer>
-    <div class="wrap">
-      © 2026 Compass Place. Explore senior living privately, at your own pace.
+  
+  <footer class="site-footer">
+    <div class="footer-wrap">
+      <div class="brand">Compass Place</div>
+      <p class="footer-tagline">Explore senior living privately, at your own pace.</p>
+      <div class="footer-links">
+        <a href="https://compassplace.com/">Home</a>
+        <a href="https://compassplace.com/senior-living/">Senior Living</a>
+        <a href="https://compassplace.com/resources/">Resources</a>
+        <a href="https://compassplace.com/faq/">FAQ</a>
+        <a href="https://compassplace.com/privacy-policy/">Privacy Policy</a>
+        <a href="https://compassplace.com/terms-of-service/">Terms of Service</a>
+        <a href="https://compassplace.com/get/">Get the App</a>
+      </div>
     </div>
   </footer>
+
 </body>
 </html>
