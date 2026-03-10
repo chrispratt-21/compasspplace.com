@@ -112,101 +112,124 @@
         .footer-links a { color: var(--color-text-secondary); text-decoration: none; margin: 0 12px; font-size: 0.85rem; }
         .footer-links a:hover { color: var(--color-primary); }
     
-.site-header {
-  background: #ffffff;
-  border-bottom: 1px solid var(--color-border, var(--border));
+/* Compass Place canonical shared shell */
+.cp-shell-header,
+.cp-shell-footer,
+.cp-shell-header *,
+.cp-shell-footer * {
+  box-sizing: border-box;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+  letter-spacing: normal;
+}
+.cp-shell-header {
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
+  width: 100%;
+  background: #ffffff;
+  border-bottom: 1px solid #d8d2c8;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
-.nav-wrap {
-  width: min(1100px, calc(100% - 48px));
+.cp-shell-footer {
+  width: 100%;
+  background: #ffffff;
+  border-top: 1px solid #d8d2c8;
+  margin-top: 12px;
+}
+.cp-shell-inner {
+  width: min(1160px, calc(100% - 32px));
   margin: 0 auto;
+}
+.cp-shell-header .cp-shell-inner {
   padding: 18px 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 18px;
 }
-.brand {
-  font-family: var(--font-body, Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif) !important;
-  font-weight: 800 !important;
-  color: var(--color-primary, var(--primary)) !important;
-  letter-spacing: -0.02em !important;
-  font-size: 1.15rem !important;
+.cp-shell-brand,
+.cp-shell-brand:link,
+.cp-shell-brand:visited {
+  display: inline-block;
+  color: #1f5c4f !important;
   text-decoration: none !important;
+  font-size: 1.15rem !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+  letter-spacing: -0.02em !important;
 }
-.nav-links {
+.cp-shell-nav {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 18px;
 }
-.nav-links a {
-  color: var(--color-text, var(--text));
-  font-size: 0.98rem;
-  font-weight: 500;
-  text-decoration: none;
+.cp-shell-nav a,
+.cp-shell-nav a:link,
+.cp-shell-nav a:visited {
+  color: #1d2733 !important;
+  text-decoration: none !important;
+  font-size: 0.98rem !important;
+  font-weight: 500 !important;
+  line-height: 1.2 !important;
 }
-.nav-links a:hover { text-decoration: underline; }
-.nav-links .cta-link {
-  background: var(--color-primary, var(--primary));
-  color: #fff;
+.cp-shell-nav a:hover {
+  text-decoration: underline !important;
+}
+.cp-shell-nav .cp-shell-cta,
+.cp-shell-nav .cp-shell-cta:link,
+.cp-shell-nav .cp-shell-cta:visited {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
   padding: 10px 14px;
+  background: #1f5c4f !important;
+  color: #ffffff !important;
   border-radius: 999px;
-  font-weight: 700;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  text-decoration: none !important;
 }
-.nav-links .cta-link:hover {
-  text-decoration: none;
-  background: var(--color-primary-light, var(--primary-light));
-  color: #fff;
+.cp-shell-nav .cp-shell-cta:hover {
+  background: #2f7b6b !important;
+  text-decoration: none !important;
 }
-.site-footer {
-  border-top: 1px solid var(--color-border, var(--border));
-  background: #ffffff;
-  margin-top: 40px;
-}
-.footer-wrap {
-  width: min(1100px, calc(100% - 48px));
-  margin: 0 auto;
+.cp-shell-footer-inner {
   padding: 28px 0 40px;
-  color: var(--color-text-secondary, var(--text-secondary));
-  font-size: 0.95rem;
-  text-align: center;
 }
-.footer-tagline {
-  margin: 8px 0 0;
-  color: var(--color-text-secondary, var(--text-secondary));
+.cp-shell-tagline {
+  margin: 8px 0 0 !important;
+  color: #53606f !important;
+  font-size: 0.95rem !important;
+  line-height: 1.5 !important;
 }
-.footer-links {
+.cp-shell-footer-links {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 18px;
   margin-top: 10px;
 }
-.footer-links a {
-  color: var(--color-text-secondary, var(--text-secondary));
-  text-decoration: none;
-  font-size: 0.9rem;
+.cp-shell-footer-links a,
+.cp-shell-footer-links a:link,
+.cp-shell-footer-links a:visited {
+  color: #53606f !important;
+  text-decoration: none !important;
+  font-size: 0.95rem !important;
+  line-height: 1.4 !important;
 }
-.footer-links a:hover { text-decoration: underline; }
+.cp-shell-footer-links a:hover {
+  text-decoration: underline !important;
+}
 @media (max-width: 860px) {
-  .nav-wrap {
+  .cp-shell-header .cp-shell-inner {
     padding: 16px 0;
     align-items: flex-start;
     flex-direction: column;
   }
-  .nav-links {
+  .cp-shell-nav {
     gap: 12px 16px;
-  }
-  .footer-wrap {
-    text-align: left;
-  }
-  .footer-links {
-    justify-content: flex-start;
   }
 }
 
@@ -215,14 +238,14 @@
 <body>
 
 
-<header class="site-header">
-  <div class="nav-wrap">
-    <a class="brand" href="https://compassplace.com/">Compass Place</a>
-    <nav class="nav-links" aria-label="Primary">
+<header class="cp-shell-header" data-cp-shell="header">
+  <div class="cp-shell-inner">
+    <a class="cp-shell-brand" href="https://compassplace.com/">Compass Place</a>
+    <nav class="cp-shell-nav" aria-label="Primary">
       <a href="https://compassplace.com/senior-living/">Senior Living</a>
       <a href="https://compassplace.com/resources/">Resources</a>
       <a href="https://compassplace.com/faq/">FAQ</a>
-      <a href="https://compassplace.com/get/" class="cta-link">Get the App</a>
+      <a href="https://compassplace.com/get/" class="cp-shell-cta">Get the App</a>
     </nav>
   </div>
 </header>
@@ -378,11 +401,11 @@
 </article>
 
 
-<footer class="site-footer">
-  <div class="footer-wrap">
-    <div class="brand">Compass Place</div>
-    <p class="footer-tagline">Explore senior living privately, at your own pace.</p>
-    <div class="footer-links">
+<footer class="cp-shell-footer" data-cp-shell="footer">
+  <div class="cp-shell-inner cp-shell-footer-inner">
+    <div class="cp-shell-brand cp-shell-brand-static">Compass Place</div>
+    <p class="cp-shell-tagline">Explore senior living privately, at your own pace.</p>
+    <div class="cp-shell-footer-links">
       <a href="https://compassplace.com/">Home</a>
       <a href="https://compassplace.com/senior-living/">Senior Living</a>
       <a href="https://compassplace.com/resources/">Resources</a>
