@@ -285,6 +285,8 @@
       letter-spacing: -0.025em !important;
     }
     h3 { letter-spacing: -0.02em !important; }
+    /* Hide mobile CTA on desktop — must come BEFORE the media query so mobile can override */
+    .nav-cta-mobile { display: none; }
     @media (max-width: 860px) {
       .nav-wrap {
         padding: 12px 0;
@@ -318,8 +320,6 @@
       /* Hide desktop CTA inside nav-links on mobile */
       .nav-links .cta-link { display: none; }
     }
-    /* Hide mobile CTA on desktop */
-    .nav-cta-mobile { display: none; }
 
 </style>
 
