@@ -25,21 +25,6 @@
         }
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: var(--font-body); color: var(--color-text); background: var(--color-bg); line-height: 1.7; font-size: 16px; -webkit-font-smoothing: antialiased; }
-        .nav { position: sticky; top: 0; z-index: 100; background: rgba(250,250,247,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--color-border); }
-        .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 64px; }
-        .nav-logo { font-family: var(--font-display); font-size: 1.35rem; color: var(--color-primary); text-decoration: none; }
-        .nav-links { display: flex; gap: 28px; align-items: center; }
-        .nav-links a { text-decoration: none; color: var(--color-text-secondary); font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
-        .nav-links a:hover { color: var(--color-primary); }
-        .nav-links .btn-nav { background: var(--color-primary); color: #fff; padding: 8px 20px; border-radius: 6px; font-weight: 600; }
-        .nav-links .btn-nav:hover { background: var(--color-primary-light); color: #fff; }
-        .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
-        .nav-toggle svg { width: 26px; height: 26px; color: var(--color-text); }
-        @media (max-width: 768px) {
-            .nav-links { display: none; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; background: var(--color-bg); border-bottom: 1px solid var(--color-border); padding: 16px 24px; gap: 16px; }
-            .nav-links.open { display: flex; }
-            .nav-toggle { display: block; }
-        }
         .legal { max-width: var(--max-width); margin: 0 auto; padding: 48px 24px 80px; }
         .legal h1 { font-family: var(--font-display); font-size: clamp(1.8rem, 4vw, 2.5rem); color: var(--color-primary); margin-bottom: 8px; }
         .legal .updated { font-size: 0.9rem; color: var(--color-text-secondary); margin-bottom: 32px; }
@@ -179,8 +164,6 @@
     align-items: center;
     row-gap: 0;
   }
-  /* Line 1: brand (left) + CTA button (right) */
-  /* Button height = 8px top + 8px bottom padding + ~17.6px line-height ≈ 34px */
   .cp-shell-brand { flex: 1 1 auto; line-height: 34px; padding-top: 2px; }
   .cp-shell-cta-mobile {
     display: inline-block;
@@ -194,7 +177,6 @@
     white-space: nowrap;
   }
   .cp-shell-cta-mobile:hover { background: var(--primary-light); text-decoration: none; }
-  /* Line 2: the three text links */
   .cp-shell-nav {
     width: 100%;
     gap: 0 20px;
@@ -203,7 +185,6 @@
     margin-top: 8px;
     padding-bottom: 4px;
   }
-  /* Hide desktop CTA inside nav on mobile */
   .cp-shell-nav .cp-shell-cta { display: none; }
 }
 
@@ -286,9 +267,9 @@
     <ul>
         <li>After you send <strong>STOP</strong>, we will send a confirmation and stop sending texts from that number.</li>
         <li><strong>Important:</strong> because SMS is required for account verification, opting out of SMS will prevent you from receiving verification codes and may prevent you from signing in until you opt back in.</li>
-        <li>You may opt back in by replying <strong>START</strong> or by contacting <a href="/cdn-cgi/l/email-protection#ed8e828383888e99ad8e82809d8c9e9e9d818c8e88c38e8280"><span class="__cf_email__" data-cfemail="13707c7d7d76706753707c7e63726060637f7270763d707c7e">[email&#160;protected]</span></a>.</li>
+        <li>You may opt back in by replying <strong>START</strong> or by contacting <a href="/cdn-cgi/l/email-protection#42212d2c2c27213602212d2f32233131322e2321276c212d2f"><span class="__cf_email__" data-cfemail="fe9d9190909b9d8abe9d91938e9f8d8d8e929f9d9bd09d9193">[email&#160;protected]</span></a>.</li>
     </ul>
-    <p>Reply <strong>HELP</strong> to any message for assistance, or contact <a href="/cdn-cgi/l/email-protection#1d7e727373787e695d7e72706d7c6e6e6d717c7e78337e7270"><span class="__cf_email__" data-cfemail="72111d1c1c17110632111d1f02130101021e1311175c111d1f">[email&#160;protected]</span></a>.</p><h2>5. Tour Scheduling</h2>
+    <p>Reply <strong>HELP</strong> to any message for assistance, or contact <a href="/cdn-cgi/l/email-protection#d2b1bdbcbcb7b1a692b1bdbfa2b3a1a1a2beb3b1b7fcb1bdbf"><span class="__cf_email__" data-cfemail="50333f3e3e35332410333f3d20312323203c3133357e333f3d">[email&#160;protected]</span></a>.</p><h2>5. Tour Scheduling</h2>
     <p>When you request a tour through Compass Place, we coordinate scheduling between you and the facility. If you have enabled optional SMS tour messaging, we may communicate scheduling details by SMS; otherwise, we may use in-app and/or push notifications where available:</p>
     <ul>
         <li>We may send an SMS to the facility's designated contact person on your behalf</li>
@@ -396,7 +377,7 @@
 
     <h2>19. Contact Us</h2>
     <p><strong>Fletcher Street Corporation</strong><br>
-    Email: <a href="/cdn-cgi/l/email-protection#57343839393234231734383a27362424273b3634327934383a"><span class="__cf_email__" data-cfemail="b4d7dbdadad1d7c0f4d7dbd9c4d5c7c7c4d8d5d7d19ad7dbd9">[email&#160;protected]</span></a></p>
+    Email: <a href="/cdn-cgi/l/email-protection#debdb1b0b0bbbdaa9ebdb1b3aebfadadaeb2bfbdbbf0bdb1b3"><span class="__cf_email__" data-cfemail="5d3e323333383e291d3e32302d3c2e2e2d313c3e38733e3230">[email&#160;protected]</span></a></p>
     <p><em>Thank you for using Compass Place. We're here to help you find the right care for your loved one.</em></p>
 </article>
 
@@ -407,4 +388,15 @@
     <p class="cp-shell-tagline">Explore senior living privately, at your own pace.</p>
     <div class="cp-shell-footer-links">
       <a href="https://compassplace.com/">Home</a>
-      <a href="https://co
+      <a href="https://compassplace.com/senior-living/">Senior Living</a>
+      <a href="https://compassplace.com/resources/">Resources</a>
+      <a href="https://compassplace.com/faq/">FAQ</a>
+      <a href="https://compassplace.com/privacy-policy/">Privacy Policy</a>
+      <a href="https://compassplace.com/terms-of-service/">Terms of Service</a>
+      <a href="https://compassplace.com/get/">Get the App</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
