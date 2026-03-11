@@ -236,12 +236,17 @@
       text-decoration: none;
     }
     .nav-links a:hover { text-decoration: underline; }
-    .nav-links .cta-link {
+        .nav-links .cta-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       background: var(--primary);
       color: #fff;
       padding: 10px 14px;
       border-radius: 999px;
       font-weight: 700;
+      line-height: 1;
+      text-decoration: none;
     }
     .nav-links .cta-link:hover {
       text-decoration: none;
@@ -319,7 +324,18 @@
         padding-bottom: 4px;
       }
       /* Hide desktop CTA inside nav-links on mobile */
-      .nav-links .cta-link { display: none; }
+          .nav-links .cta-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--primary);
+      color: #fff;
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-weight: 700;
+      line-height: 1;
+      text-decoration: none;
+    }
     }
 
 </style>
@@ -408,21 +424,21 @@
   </section>
 
   
-    <footer class="site-footer">
-    <div class="footer-wrap">
-      <div class="brand">Compass Place</div>
-      <p class="footer-tagline">Explore senior living privately, at your own pace.</p>
-      <div class="footer-links">
-        <a href="https://compassplace.com/">Home</a>
-        <a href="https://compassplace.com/senior-living/">Senior Living</a>
-        <a href="https://compassplace.com/resources/">Resources</a>
-        <a href="https://compassplace.com/faq/">FAQ</a>
-        <a href="https://compassplace.com/privacy-policy/">Privacy Policy</a>
-        <a href="https://compassplace.com/terms-of-service/">Terms of Service</a>
-        <a href="https://compassplace.com/get/">Get the App</a>
-      </div>
+    <footer class="site-footer" data-cp-shell="footer">
+  <div class="site-inner site-footer-inner">
+    <div class="brand">Compass Place</div>
+    <p class="footer-tagline">Explore senior living privately, at your own pace.</p>
+    <div class="footer-links">
+      <a href="https://compassplace.com/">Home</a>
+      <a href="https://compassplace.com/senior-living/">Senior Living</a>
+      <a href="https://compassplace.com/resources/">Resources</a>
+      <a href="https://compassplace.com/faq/">FAQ</a>
+      <a href="https://compassplace.com/privacy-policy/">Privacy Policy</a>
+      <a href="https://compassplace.com/terms-of-service/">Terms of Service</a>
+      <a href="https://compassplace.com/get/">Get the App</a>
     </div>
-  </footer>
+  </div>
+</footer>
 
 </body>
 </html>
