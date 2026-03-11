@@ -295,7 +295,8 @@
         row-gap: 0;
       }
       /* Line 1: brand (left) + CTA button (right) */
-      .brand { flex: 1 1 auto; }
+      /* Button height = 8px top + 8px bottom padding + ~17.6px line-height ≈ 34px */
+      .brand { flex: 1 1 auto; line-height: 34px; }
       .nav-cta-mobile {
         display: inline-block;
         background: var(--primary);
