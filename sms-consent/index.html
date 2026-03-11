@@ -122,13 +122,22 @@
         .footer-links a:hover { color: var(--color-primary); }
     
 /* Compass Place canonical shared shell */
+:root {
+  --primary: #2b5f4e;
+  --primary-light: #3a7d66;
+  --text: #2c2c2c;
+  --text-secondary: #6b6b6b;
+  --border: #e5e2dc;
+}
 .cp-shell-header,
-.cp-shell-footer,
+.cp-shell-footer {
+  box-sizing: border-box;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+}
 .cp-shell-header *,
 .cp-shell-footer * {
   box-sizing: border-box;
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
-  letter-spacing: normal;
 }
 .cp-shell-header {
   position: sticky;
@@ -136,14 +145,14 @@
   z-index: 1000;
   width: 100%;
   background: #ffffff;
-  border-bottom: 1px solid #d8d2c8;
+  border-bottom: 1px solid var(--border);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
 .cp-shell-footer {
   width: 100%;
   background: #ffffff;
-  border-top: 1px solid #d8d2c8;
+  border-top: 1px solid var(--border);
   margin-top: 12px;
 }
 .cp-shell-inner {
@@ -161,9 +170,9 @@
 .cp-shell-brand:link,
 .cp-shell-brand:visited {
   display: inline-block;
-  color: #1f5c4f !important;
+  color: var(--primary) !important;
   text-decoration: none !important;
-  font-size: 1.15rem !important;
+  font-size: 1.44rem !important;
   font-weight: 800 !important;
   line-height: 1.1 !important;
   letter-spacing: -0.02em !important;
@@ -177,24 +186,21 @@
 .cp-shell-nav a,
 .cp-shell-nav a:link,
 .cp-shell-nav a:visited {
-  color: #1d2733 !important;
+  color: var(--text) !important;
   text-decoration: none !important;
   font-size: 0.98rem !important;
   font-weight: 500 !important;
   line-height: 1.2 !important;
 }
-.cp-shell-nav a:hover {
-  text-decoration: underline !important;
-}
+.cp-shell-nav a:hover { text-decoration: underline !important; }
 .cp-shell-nav .cp-shell-cta,
 .cp-shell-nav .cp-shell-cta:link,
 .cp-shell-nav .cp-shell-cta:visited {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 40px;
   padding: 10px 14px;
-  background: #1f5c4f !important;
+  background: var(--primary) !important;
   color: #ffffff !important;
   border-radius: 999px;
   font-weight: 700 !important;
@@ -202,15 +208,13 @@
   text-decoration: none !important;
 }
 .cp-shell-nav .cp-shell-cta:hover {
-  background: #2f7b6b !important;
+  background: var(--primary-light) !important;
   text-decoration: none !important;
 }
-.cp-shell-footer-inner {
-  padding: 28px 0 40px;
-}
+.cp-shell-footer-inner { padding: 28px 0 40px; }
 .cp-shell-tagline {
   margin: 8px 0 0 !important;
-  color: #53606f !important;
+  color: var(--text-secondary) !important;
   font-size: 0.95rem !important;
   line-height: 1.5 !important;
 }
@@ -223,23 +227,47 @@
 .cp-shell-footer-links a,
 .cp-shell-footer-links a:link,
 .cp-shell-footer-links a:visited {
-  color: #53606f !important;
+  color: var(--text-secondary) !important;
   text-decoration: none !important;
   font-size: 0.95rem !important;
   line-height: 1.4 !important;
 }
-.cp-shell-footer-links a:hover {
-  text-decoration: underline !important;
-}
+.cp-shell-footer-links a:hover { text-decoration: underline !important; }
+/* Hide mobile CTA on desktop — must come BEFORE the media query so mobile can override */
+.cp-shell-cta-mobile { display: none; }
 @media (max-width: 860px) {
   .cp-shell-header .cp-shell-inner {
-    padding: 16px 0;
-    align-items: flex-start;
-    flex-direction: column;
+    padding: 12px 0;
+    flex-wrap: wrap;
+    align-items: center;
+    row-gap: 0;
   }
+  /* Line 1: brand (left) + CTA button (right) */
+  /* Button height = 8px top + 8px bottom padding + ~17.6px line-height ≈ 34px */
+  .cp-shell-brand { flex: 1 1 auto; line-height: 34px; padding-top: 2px; }
+  .cp-shell-cta-mobile {
+    display: inline-block;
+    background: var(--primary);
+    color: #fff !important;
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.92rem;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .cp-shell-cta-mobile:hover { background: var(--primary-light); text-decoration: none; }
+  /* Line 2: the three text links */
   .cp-shell-nav {
-    gap: 12px 16px;
+    width: 100%;
+    gap: 0 20px;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    margin-top: 8px;
+    padding-bottom: 4px;
   }
+  /* Hide desktop CTA inside nav on mobile */
+  .cp-shell-nav .cp-shell-cta { display: none; }
 }
 
 </style>
@@ -250,6 +278,7 @@
 <header class="cp-shell-header" data-cp-shell="header">
   <div class="cp-shell-inner">
     <a class="cp-shell-brand" href="https://compassplace.com/">Compass Place</a>
+    <a class="cp-shell-cta-mobile" href="https://compassplace.com/get/">Get the App</a>
     <nav class="cp-shell-nav" aria-label="Primary">
       <a href="https://compassplace.com/senior-living/">Senior Living</a>
       <a href="https://compassplace.com/resources/">Resources</a>
@@ -298,12 +327,12 @@
     <ul>
         <li>Replying <strong>STOP</strong> to any message from Compass Place</li>
         <li>Updating notification preferences in the App</li>
-        <li>Contacting <a href="mailto:connect@compassplace.com">connect@compassplace.com</a></li>
+        <li>Contacting <a href="/cdn-cgi/l/email-protection#e98a8687878c8a9da98a868499889a9a9985888a8cc78a8684"><span class="__cf_email__" data-cfemail="bad9d5d4d4dfd9cefad9d5d7cadbc9c9cad6dbd9df94d9d5d7">[email&#160;protected]</span></a></li>
     </ul>
     <p>After opting out, users receive a confirmation message. Users may opt back in at any time through the App settings.</p>
 
     <h2>Help</h2>
-    <p>Reply <strong>HELP</strong> to any message for assistance, or contact <a href="mailto:connect@compassplace.com">connect@compassplace.com</a>.</p>
+    <p>Reply <strong>HELP</strong> to any message for assistance, or contact <a href="/cdn-cgi/l/email-protection#56353938383335221635393b26372525263a3735337835393b"><span class="__cf_email__" data-cfemail="96f5f9f8f8f3f5e2d6f5f9fbe6f7e5e5e6faf7f5f3b8f5f9fb">[email&#160;protected]</span></a>.</p>
     <p><strong>Message and data rates may apply.</strong></p>
 
     <h2>App Registration Screenshots</h2>
@@ -349,14 +378,4 @@
       <a href="https://compassplace.com/">Home</a>
       <a href="https://compassplace.com/senior-living/">Senior Living</a>
       <a href="https://compassplace.com/resources/">Resources</a>
-      <a href="https://compassplace.com/faq/">FAQ</a>
-      <a href="https://compassplace.com/privacy-policy/">Privacy Policy</a>
-      <a href="https://compassplace.com/terms-of-service/">Terms of Service</a>
-      <a href="https://compassplace.com/get/">Get the App</a>
-    </div>
-  </div>
-</footer>
-
-
-</body>
-</html>
+      <a href="https://compass
