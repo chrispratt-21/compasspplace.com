@@ -109,14 +109,24 @@
         .footer-links a { color: var(--color-text-secondary); text-decoration: none; margin: 0 12px; font-size: 0.85rem; }
         .footer-links a:hover { color: var(--color-primary); }
     
+
 /* Compass Place canonical shared shell */
+:root {
+  --primary: #2b5f4e;
+  --primary-light: #3a7d66;
+  --text: #2c2c2c;
+  --text-secondary: #6b6b6b;
+  --border: #e5e2dc;
+}
 .cp-shell-header,
-.cp-shell-footer,
+.cp-shell-footer {
+  box-sizing: border-box;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+}
 .cp-shell-header *,
 .cp-shell-footer * {
   box-sizing: border-box;
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
-  letter-spacing: normal;
 }
 .cp-shell-header {
   position: sticky;
@@ -124,14 +134,14 @@
   z-index: 1000;
   width: 100%;
   background: #ffffff;
-  border-bottom: 1px solid #d8d2c8;
+  border-bottom: 1px solid var(--border);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
 .cp-shell-footer {
   width: 100%;
   background: #ffffff;
-  border-top: 1px solid #d8d2c8;
+  border-top: 1px solid var(--border);
   margin-top: 12px;
 }
 .cp-shell-inner {
@@ -149,9 +159,9 @@
 .cp-shell-brand:link,
 .cp-shell-brand:visited {
   display: inline-block;
-  color: #1f5c4f !important;
+  color: var(--primary) !important;
   text-decoration: none !important;
-  font-size: 1.15rem !important;
+  font-size: 1.44rem !important;
   font-weight: 800 !important;
   line-height: 1.1 !important;
   letter-spacing: -0.02em !important;
@@ -165,24 +175,21 @@
 .cp-shell-nav a,
 .cp-shell-nav a:link,
 .cp-shell-nav a:visited {
-  color: #1d2733 !important;
+  color: var(--text) !important;
   text-decoration: none !important;
   font-size: 0.98rem !important;
   font-weight: 500 !important;
   line-height: 1.2 !important;
 }
-.cp-shell-nav a:hover {
-  text-decoration: underline !important;
-}
+.cp-shell-nav a:hover { text-decoration: underline !important; }
 .cp-shell-nav .cp-shell-cta,
 .cp-shell-nav .cp-shell-cta:link,
 .cp-shell-nav .cp-shell-cta:visited {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 40px;
   padding: 10px 14px;
-  background: #1f5c4f !important;
+  background: var(--primary) !important;
   color: #ffffff !important;
   border-radius: 999px;
   font-weight: 700 !important;
@@ -190,15 +197,13 @@
   text-decoration: none !important;
 }
 .cp-shell-nav .cp-shell-cta:hover {
-  background: #2f7b6b !important;
+  background: var(--primary-light) !important;
   text-decoration: none !important;
 }
-.cp-shell-footer-inner {
-  padding: 28px 0 40px;
-}
+.cp-shell-footer-inner { padding: 28px 0 40px; }
 .cp-shell-tagline {
   margin: 8px 0 0 !important;
-  color: #53606f !important;
+  color: var(--text-secondary) !important;
   font-size: 0.95rem !important;
   line-height: 1.5 !important;
 }
@@ -211,33 +216,53 @@
 .cp-shell-footer-links a,
 .cp-shell-footer-links a:link,
 .cp-shell-footer-links a:visited {
-  color: #53606f !important;
+  color: var(--text-secondary) !important;
   text-decoration: none !important;
   font-size: 0.95rem !important;
   line-height: 1.4 !important;
 }
-.cp-shell-footer-links a:hover {
-  text-decoration: underline !important;
-}
+.cp-shell-footer-links a:hover { text-decoration: underline !important; }
+/* Hide mobile CTA on desktop — must come BEFORE the media query so mobile can override */
+.cp-shell-cta-mobile { display: none; }
 @media (max-width: 860px) {
   .cp-shell-header .cp-shell-inner {
-    padding: 16px 0;
-    align-items: flex-start;
-    flex-direction: column;
+    padding: 12px 0;
+    flex-wrap: wrap;
+    align-items: center;
+    row-gap: 0;
   }
+  .cp-shell-brand { flex: 1 1 auto; line-height: 34px; padding-top: 2px; }
+  .cp-shell-cta-mobile {
+    display: inline-block;
+    background: var(--primary);
+    color: #fff !important;
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.92rem;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .cp-shell-cta-mobile:hover { background: var(--primary-light); text-decoration: none; }
   .cp-shell-nav {
-    gap: 12px 16px;
+    width: 100%;
+    gap: 0 20px;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    margin-top: 8px;
+    padding-bottom: 4px;
   }
+  .cp-shell-nav .cp-shell-cta { display: none; }
 }
 
 </style>
 </head>
 <body>
 
-
 <header class="cp-shell-header" data-cp-shell="header">
   <div class="cp-shell-inner">
     <a class="cp-shell-brand" href="https://compassplace.com/">Compass Place</a>
+    <a class="cp-shell-cta-mobile" href="https://compassplace.com/get/">Get the App</a>
     <nav class="cp-shell-nav" aria-label="Primary">
       <a href="https://compassplace.com/senior-living/">Senior Living</a>
       <a href="https://compassplace.com/resources/">Resources</a>
@@ -247,7 +272,7 @@
   </div>
 </header>
 
-
+<main class="cp-shell-main">
 <section class="faq-container">
     <h1>Frequently Asked Questions</h1>
     <p class="subtitle">Please reach out to us if you cannot find an answer to your question.</p>
@@ -410,14 +435,14 @@
 
     <div class="faq-contact">
         <p>Still have questions?</p>
-        <a href="mailto:connect@compassplace.com">connect@compassplace.com</a> · <a href="tel:3174266866">317-426-6866</a>
+        <a href="/cdn-cgi/l/email-protection#65060a0b0b00061125060a081504161615090406004b060a08"><span class="__cf_email__" data-cfemail="61020e0f0f04021521020e0c11001212110d0002044f020e0c">[email&#160;protected]</span></a> · <a href="tel:3174266866">317-426-6866</a>
     </div>
 </section>
-
+</main>
 
 <footer class="cp-shell-footer" data-cp-shell="footer">
   <div class="cp-shell-inner cp-shell-footer-inner">
-    <div class="cp-shell-brand cp-shell-brand-static">Compass Place</div>
+    <div class="cp-shell-brand">Compass Place</div>
     <p class="cp-shell-tagline">Explore senior living privately, at your own pace.</p>
     <div class="cp-shell-footer-links">
       <a href="https://compassplace.com/">Home</a>
@@ -425,12 +450,4 @@
       <a href="https://compassplace.com/resources/">Resources</a>
       <a href="https://compassplace.com/faq/">FAQ</a>
       <a href="https://compassplace.com/privacy-policy/">Privacy Policy</a>
-      <a href="https://compassplace.com/terms-of-service/">Terms of Service</a>
-      <a href="https://compassplace.com/get/">Get the App</a>
-    </div>
-  </div>
-</footer>
-
-
-</body>
-</html>
+      <a href="https://compassplace.com/term
