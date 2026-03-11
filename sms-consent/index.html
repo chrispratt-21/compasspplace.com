@@ -24,21 +24,6 @@
         }
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: var(--font-body); color: var(--color-text); background: var(--color-bg); line-height: 1.7; font-size: 16px; -webkit-font-smoothing: antialiased; }
-        .nav { position: sticky; top: 0; z-index: 100; background: rgba(250,250,247,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--color-border); }
-        .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 64px; }
-        .nav-logo { font-family: var(--font-display); font-size: 1.35rem; color: var(--color-primary); text-decoration: none; }
-        .nav-links { display: flex; gap: 28px; align-items: center; }
-        .nav-links a { text-decoration: none; color: var(--color-text-secondary); font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
-        .nav-links a:hover { color: var(--color-primary); }
-        .nav-links .btn-nav { background: var(--color-primary); color: #fff; padding: 8px 20px; border-radius: 6px; font-weight: 600; }
-        .nav-links .btn-nav:hover { background: var(--color-primary-light); color: #fff; }
-        .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
-        .nav-toggle svg { width: 26px; height: 26px; color: var(--color-text); }
-        @media (max-width: 768px) {
-            .nav-links { display: none; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; background: var(--color-bg); border-bottom: 1px solid var(--color-border); padding: 16px 24px; gap: 16px; }
-            .nav-links.open { display: flex; }
-            .nav-toggle { display: block; }
-        }
         .legal { max-width: var(--max-width); margin: 0 auto; padding: 48px 24px 80px; }
         .legal h1 { font-family: var(--font-display); font-size: clamp(1.8rem, 4vw, 2.5rem); color: var(--color-primary); margin-bottom: 8px; }
         .legal .intro { color: var(--color-text-secondary); margin-bottom: 32px; font-size: 0.95rem; }
@@ -242,8 +227,6 @@
     align-items: center;
     row-gap: 0;
   }
-  /* Line 1: brand (left) + CTA button (right) */
-  /* Button height = 8px top + 8px bottom padding + ~17.6px line-height ≈ 34px */
   .cp-shell-brand { flex: 1 1 auto; line-height: 34px; padding-top: 2px; }
   .cp-shell-cta-mobile {
     display: inline-block;
@@ -257,7 +240,6 @@
     white-space: nowrap;
   }
   .cp-shell-cta-mobile:hover { background: var(--primary-light); text-decoration: none; }
-  /* Line 2: the three text links */
   .cp-shell-nav {
     width: 100%;
     gap: 0 20px;
@@ -266,7 +248,6 @@
     margin-top: 8px;
     padding-bottom: 4px;
   }
-  /* Hide desktop CTA inside nav on mobile */
   .cp-shell-nav .cp-shell-cta { display: none; }
 }
 
@@ -327,12 +308,12 @@
     <ul>
         <li>Replying <strong>STOP</strong> to any message from Compass Place</li>
         <li>Updating notification preferences in the App</li>
-        <li>Contacting <a href="/cdn-cgi/l/email-protection#e98a8687878c8a9da98a868499889a9a9985888a8cc78a8684"><span class="__cf_email__" data-cfemail="bad9d5d4d4dfd9cefad9d5d7cadbc9c9cad6dbd9df94d9d5d7">[email&#160;protected]</span></a></li>
+        <li>Contacting <a href="/cdn-cgi/l/email-protection#83e0ecedede6e0f7c3e0eceef3e2f0f0f3efe2e0e6ade0ecee"><span class="__cf_email__" data-cfemail="abc8c4c5c5cec8dfebc8c4c6dbcad8d8dbc7cac8ce85c8c4c6">[email&#160;protected]</span></a></li>
     </ul>
     <p>After opting out, users receive a confirmation message. Users may opt back in at any time through the App settings.</p>
 
     <h2>Help</h2>
-    <p>Reply <strong>HELP</strong> to any message for assistance, or contact <a href="/cdn-cgi/l/email-protection#56353938383335221635393b26372525263a3735337835393b"><span class="__cf_email__" data-cfemail="96f5f9f8f8f3f5e2d6f5f9fbe6f7e5e5e6faf7f5f3b8f5f9fb">[email&#160;protected]</span></a>.</p>
+    <p>Reply <strong>HELP</strong> to any message for assistance, or contact <a href="/cdn-cgi/l/email-protection#e784888989828493a784888a97869494978b868482c984888a"><span class="__cf_email__" data-cfemail="593a3637373c3a2d193a363429382a2a2935383a3c773a3634">[email&#160;protected]</span></a>.</p>
     <p><strong>Message and data rates may apply.</strong></p>
 
     <h2>App Registration Screenshots</h2>
@@ -378,4 +359,13 @@
       <a href="https://compassplace.com/">Home</a>
       <a href="https://compassplace.com/senior-living/">Senior Living</a>
       <a href="https://compassplace.com/resources/">Resources</a>
-      <a href="https://compass
+      <a href="https://compassplace.com/faq/">FAQ</a>
+      <a href="https://compassplace.com/privacy-policy/">Privacy Policy</a>
+      <a href="https://compassplace.com/terms-of-service/">Terms of Service</a>
+      <a href="https://compassplace.com/get/">Get the App</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
