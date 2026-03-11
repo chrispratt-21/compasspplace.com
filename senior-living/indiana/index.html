@@ -196,165 +196,13 @@
       .hero, .grid-2, .grid-3, .stats-grid { grid-template-columns: 1fr; }
       .topbar-inner { padding: 14px 18px; }
     }
-
-    body {
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
-      line-height: 1.65;
-    }
-    .site-header {
-      background: #ffffff;
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 30;
-      backdrop-filter: blur(10px);
-    }
-    .nav-wrap {
-      width: min(1160px, calc(100% - 32px));
-      margin: 0 auto;
-      padding: 18px 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-    }
-    .brand {
-      font-weight: 800 !important;
-      color: var(--primary) !important;
-      letter-spacing: -0.02em !important;
-      font-size: 1.44rem !important;
-    }
-    .nav-links {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 18px;
-    }
-    .nav-links a {
-      color: var(--text);
-      font-size: 0.98rem;
-      text-decoration: none;
-    }
-    .nav-links a:hover { text-decoration: underline; }
-        .nav-links .cta-link {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--primary);
-      color: #fff;
-      padding: 10px 14px;
-      border-radius: 999px;
-      font-weight: 700;
-      line-height: 1;
-      text-decoration: none;
-    }
-    .nav-links .cta-link:hover {
-      text-decoration: none;
-      background: var(--primary-light);
-    }
-    .site-footer {
-      border-top: 1px solid var(--border);
-      background: #ffffff;
-      margin-top: 12px;
-    }
-    .footer-wrap {
-      width: min(1160px, calc(100% - 32px));
-      margin: 0 auto;
-      padding: 28px 0 40px;
-      color: var(--text-secondary);
-      font-size: 0.95rem;
-    }
-    .footer-tagline {
-      margin: 8px 0 0;
-      color: var(--text-secondary);
-    }
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-      margin-top: 10px;
-    }
-    .footer-links a {
-      color: var(--text-secondary);
-      text-decoration: none;
-    }
-    .footer-links a:hover { text-decoration: underline; }
-    h1 {
-      font-size: clamp(2.25rem, 4.8vw, 3.5rem) !important;
-      line-height: 1.08 !important;
-      letter-spacing: -0.035em !important;
-    }
-    h2 {
-      font-size: clamp(1.55rem, 3vw, 2.1rem) !important;
-      line-height: 1.12 !important;
-      letter-spacing: -0.025em !important;
-    }
-    h3 { letter-spacing: -0.02em !important; }
-    /* Hide mobile CTA on desktop — must come BEFORE the media query so mobile can override */
-    .nav-cta-mobile { display: none; }
-    @media (max-width: 860px) {
-      .nav-wrap {
-        padding: 12px 0;
-        flex-wrap: wrap;
-        align-items: center;
-        row-gap: 0;
-      }
-      /* Line 1: brand (left) + CTA button (right) */
-      /* Button height = 8px top + 8px bottom padding + ~17.6px line-height ≈ 34px */
-      .brand { flex: 1 1 auto; line-height: 34px; padding-top: 2px; }
-      .nav-cta-mobile {
-        display: inline-block;
-        background: var(--primary);
-        color: #fff !important;
-        padding: 8px 14px;
-        border-radius: 999px;
-        font-weight: 700;
-        font-size: 0.92rem;
-        text-decoration: none;
-        white-space: nowrap;
-      }
-      .nav-cta-mobile:hover { background: var(--primary-light); text-decoration: none; }
-      /* Line 2: the three text links */
-      .nav-links {
-        width: 100%;
-        gap: 0 20px;
-        flex-wrap: nowrap;
-        justify-content: flex-start;
-        margin-top: 8px;
-        padding-bottom: 4px;
-      }
-      /* Hide desktop CTA inside nav-links on mobile */
-          .nav-links .cta-link {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--primary);
-      color: #fff;
-      padding: 10px 14px;
-      border-radius: 999px;
-      font-weight: 700;
-      line-height: 1;
-      text-decoration: none;
-    }
-    }
-
 </style>
 
+  <script src="/cp-shell.js"></script>
 </head>
 <body>
-  
-    <header class="site-header">
-    <div class="nav-wrap">
-      <a class="brand" href="https://compassplace.com/">Compass Place</a>
-      <a class="nav-cta-mobile" href="https://compassplace.com/get/">Get the App</a>
-      <nav class="nav-links" aria-label="Primary">
-        <a href="https://compassplace.com/senior-living/">Senior Living</a>
-        <a href="https://compassplace.com/resources/">Resources</a>
-        <a href="https://compassplace.com/faq/">FAQ</a>
-        <a href="https://compassplace.com/get/" class="cta-link">Get the App</a>
-      </nav>
-    </div>
-  </header>
+
+  <div id="cp-header"></div>
 
 
   <section class="hero">
@@ -424,21 +272,9 @@
   </section>
 
   
-    <footer class="site-footer" data-cp-shell="footer">
-  <div class="site-inner site-footer-inner">
-    <div class="brand">Compass Place</div>
-    <p class="footer-tagline">Explore senior living privately, at your own pace.</p>
-    <div class="footer-links">
-      <a href="https://compassplace.com/">Home</a>
-      <a href="https://compassplace.com/senior-living/">Senior Living</a>
-      <a href="https://compassplace.com/resources/">Resources</a>
-      <a href="https://compassplace.com/faq/">FAQ</a>
-      <a href="https://compassplace.com/privacy-policy/">Privacy Policy</a>
-      <a href="https://compassplace.com/terms-of-service/">Terms of Service</a>
-      <a href="https://compassplace.com/get/">Get the App</a>
-    </div>
-  </div>
-</footer>
+    
+  <div id="cp-footer"></div>
+
 
 </body>
 </html>
