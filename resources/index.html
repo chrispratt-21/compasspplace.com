@@ -18,6 +18,33 @@
 *{box-sizing:border-box} html{scroll-behavior:smooth}
 body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
 a{color:var(--link);text-decoration:none} a:hover{text-decoration:underline}
+main{padding:34px 24px 72px}.container{max-width:var(--max);margin:0 auto}
+.breadcrumbs{font-size:.95rem;color:var(--muted);margin-bottom:18px}
+.hero,.section{background:var(--surface);border:1px solid var(--line);border-radius:28px;box-shadow:0 10px 32px rgba(20,24,28,.05)}
+.hero{padding:40px 40px 34px}.section{margin-top:30px;padding:34px 34px 30px}
+.eyebrow{color:var(--brand);font-weight:700;letter-spacing:.02em;margin-bottom:8px}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(280px,1fr);gap:28px;align-items:start}
+h1{font-size:clamp(2.35rem,5vw,4rem);line-height:1.02;margin:0 0 18px;letter-spacing:-.04em}
+.hero p.lead{font-size:1.17rem;color:#304050;margin:0 0 18px;max-width:52rem}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:22px}
+.button{display:inline-flex;align-items:center;justify-content:center;padding:13px 18px;border-radius:999px;font-weight:700;border:1px solid var(--brand)}
+.button.primary{background:var(--brand);color:#fff}.button.secondary{background:#fff;color:var(--brand)}
+.stat-panel{display:grid;grid-template-columns:1fr;gap:16px}
+.stat-card{min-height:138px;padding:18px 18px 16px;border:1px solid var(--line);border-radius:18px;background:var(--card);display:flex;flex-direction:column}
+.stat-label{font-size:.8rem;line-height:1.35;letter-spacing:.08em;text-transform:uppercase;color:#6f6658}
+.stat-value{margin-top:auto;padding-top:12px;text-align:center;font-size:2rem;line-height:1;font-weight:800;color:var(--brand)}
+.section h2{font-size:clamp(1.7rem,3.5vw,2.3rem);line-height:1.1;letter-spacing:-.03em;margin:0 0 16px}
+.section h3{font-size:1.28rem;margin:26px 0 10px}
+.section p,.section li{color:#334255;font-size:1.02rem}
+.section ul{padding-left:20px;margin:10px 0 0}
+.callout{border:1px solid #d6d1c7;background:var(--warm);border-radius:22px;padding:22px 22px 18px;margin-top:22px}
+.grid-2,.cards,.related-list{display:grid;gap:22px}
+.grid-2,.cards,.related-list{grid-template-columns:repeat(2,minmax(0,1fr))}
+.card,.related-item{border:1px solid var(--line);border-radius:22px;background:#fff;padding:22px}
+.related-item{background:var(--card);border-radius:18px;padding:18px}
+.card h3{margin-top:0}
+.cta-strip{display:flex;justify-content:space-between;align-items:center;gap:18px;background:#eff5f2;border:1px solid #cfe0d9;border-radius:22px;padding:22px 24px;margin-top:18px}
+@media (max-width:900px){.hero-grid,.grid-2,.cards,.related-list{grid-template-columns:1fr}.cta-strip{flex-direction:column;align-items:flex-start}.hero,.section{padding:28px 22px}}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Compass Place | Resources for Understanding Senior Living","description":"Plain English resources that help families understand senior living, compare care types, and explore options privately.","url":"https://compassplace.com/resources/"}</script>
   <script src="/cp-shell.js"></script>
