@@ -70,29 +70,6 @@
       padding: 0 24px;
     }
 
-    .topbar {
-      border-bottom: 1px solid var(--border);
-      background: rgba(250,250,247,0.95);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    .topbar-inner {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 18px 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .brand {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--primary);
-    }
-
     .hero {
       padding: 42px 0 28px;
     }
@@ -251,13 +228,6 @@
       margin-top: 14px;
     }
 
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 28px 0 40px;
-      font-size: 0.88rem;
-      color: var(--text-secondary);
-    }
-
     @media (max-width: 900px) {
       .hero-grid,
       .info-grid {
@@ -265,14 +235,11 @@
       }
     }
   </style>
+  <script src="/cp-shell.js"></script>
 </head>
 <body>
-  <header class="topbar">
-    <div class="topbar-inner">
-      <a class="brand" href="https://compassplace.com/">Compass Place</a>
-      <a href="https://compassplace.com/get/">Get the App</a>
-    </div>
-  </header>
+
+  <div id="cp-header"></div>
 
   <main class="wrap">
     <section class="hero">
@@ -297,7 +264,7 @@
 
           <div class="score-card">
             <div class="score-label">Compass Place Score</div>
-            <div class="score-value">3.6 / 5</div>
+            <div class="score-value">72 / 100</div>
             <div class="score-note">
               Compass Place uses state inspection performance as one input to help families compare assisted living and memory care communities.
             </div>
@@ -358,10 +325,9 @@
     </section>
   </main>
 
-  <footer>
-    <div class="wrap">
-      © 2026 Compass Place. Clear guidance, on your timeline.
-    </div>
-  </footer>
+  
+
+  <div id="cp-footer"></div>
+
 </body>
 </html>
