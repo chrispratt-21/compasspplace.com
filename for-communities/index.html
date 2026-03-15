@@ -452,6 +452,71 @@ footer {
 footer a { color: rgba(255,255,255,.8); }
 footer strong { color: #fff; }
 
+/* ── QUIET HOURS BANNER ── */
+.quiet-banner {
+  background: #1a2035;
+  border-radius: 18px;
+  padding: 22px 24px;
+  margin: 24px 0 8px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  color: #c8d4e8;
+}
+.quiet-banner-icon {
+  font-size: 28px;
+  flex-shrink: 0;
+  line-height: 1;
+  margin-top: 2px;
+}
+.quiet-banner-body strong {
+  display: block;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.quiet-banner-body p {
+  font-size: .92rem;
+  color: #8fa3c0;
+  margin: 0;
+  line-height: 1.6;
+}
+.quiet-schedule {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin: 20px 0;
+}
+.quiet-chip {
+  padding: 14px 16px;
+  border-radius: 12px;
+  font-size: .88rem;
+  border: 1px solid var(--line);
+}
+.quiet-chip.quiet-hold {
+  background: #fef3e8;
+  border-color: #f0d5b0;
+}
+.quiet-chip.quiet-send {
+  background: var(--brand-light);
+  border-color: #b8d8d0;
+}
+.quiet-chip .qc-label {
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.quiet-chip.quiet-hold .qc-label { color: #9a5c1a; }
+.quiet-chip.quiet-send .qc-label { color: var(--brand-dark); }
+.quiet-chip .qc-value {
+  font-weight: 600;
+  font-size: .95rem;
+  color: var(--text);
+}
+
 /* ── CTA SECTION OVERRIDES ── */
 .section-cta p,
 .section-cta div,
@@ -483,6 +548,7 @@ footer strong { color: #fff; }
   .msg { max-width: 90%; font-size: .87rem; }
   .callout { padding: 16px; font-size: .93rem; border-radius: 12px; }
   .divider { margin: 20px 0; }
+  .quiet-schedule { grid-template-columns: 1fr; gap: 8px; }
   footer { padding: 24px 16px; font-size: .85rem; margin-top: 40px; }
   /* CTA section stacks nicely */
   .section:last-of-type > div { flex-direction: column; gap: 20px; }
@@ -709,7 +775,48 @@ footer strong { color: #fff; }
     <p>Families may also leave reviews of your community after a tour or placement. Reviews are moderated by our team before they're published, and they factor into how your community appears to future families searching in your area.</p>
   </section>
 
-  <!-- SECTION 4: GETTING STARTED -->
+  <!-- SECTION 4: QUIET HOURS -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">🌙</div>
+      <div class="section-title">
+        <h2>Quiet hours</h2>
+        <p>When we hold messages so they reach you at a useful time</p>
+      </div>
+    </div>
+
+    <p>Compass Place holds all outbound texts — tour requests, availability reminders, family updates, and cancellations — during evenings and weekends. This is intentional: we don't want to interrupt your personal time with work messages, and we know a text that arrives at 9 PM on a Friday is unlikely to get a useful response.</p>
+
+    <div class="quiet-banner">
+      <div class="quiet-banner-icon">🌙</div>
+      <div class="quiet-banner-body">
+        <strong>Communities are offline right now</strong>
+        <p>Messages and tour requests will be delivered at 8:30 AM on Monday. You can still request tours and send messages — they'll just be held until quiet hours are over.</p>
+      </div>
+    </div>
+
+    <h3 style="font-family:'Lora',serif;font-size:1.15rem;margin:28px 0 12px;letter-spacing:-.01em;">When messages are held vs. sent</h3>
+    <div class="quiet-schedule">
+      <div class="quiet-chip quiet-send">
+        <div class="qc-label">✓ Messages send</div>
+        <div class="qc-value">Mon – Fri<br>8:30 AM – 6:00 PM</div>
+      </div>
+      <div class="quiet-chip quiet-hold">
+        <div class="qc-label">⏸ Messages held</div>
+        <div class="qc-value">Evenings, Saturdays<br>&amp; Sundays</div>
+      </div>
+    </div>
+
+    <p>All times are based on your community's local time zone. A message queued on Friday at 6:30 PM will be delivered Monday at 8:30 AM — not Saturday morning.</p>
+
+    <div class="callout">
+      <strong>Nothing is lost during quiet hours.</strong> Every message queued during off-hours is stored and delivered automatically when the window opens. You don't need to do anything differently — just expect texts to arrive during business hours rather than evenings or weekends.
+    </div>
+
+    <p>The one exception is direct replies from you. When you respond to one of our texts — proposing a tour time, sending an availability update, or replying to a family message — your reply is processed immediately regardless of the time. Quiet hours only govern the messages <em>we</em> send outbound to you.</p>
+  </section>
+
+  <!-- SECTION 5: GETTING STARTED -->
   <section class="section section-cta" style="background: var(--brand); border-color: var(--brand-dark); color: #fff;">
     <div style="display:flex; align-items:flex-start; gap:24px; flex-wrap:wrap;">
       <div style="flex:1; min-width:260px;">
