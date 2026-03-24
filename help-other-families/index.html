@@ -234,6 +234,8 @@
       font-weight: 500;
       color: var(--color-text);
       line-height: 1.5;
+      margin-bottom: 0;
+      cursor: pointer;
     }
 
     .checkbox-item input[type="checkbox"] {
@@ -241,6 +243,10 @@
       height: 18px;
       margin: 2px 0 0 0;
       flex: 0 0 18px;
+    }
+
+    .checkbox-item span {
+      display: inline-block;
     }
 
     .privacy-box {
@@ -392,7 +398,7 @@
             <label for="relationship">Your connection to this story</label>
             <select id="relationship" name="relationship" required>
               <option value="">Select one</option>
-	      <option value="self">It's me</option>
+              <option value="self">It's me</option>
               <option value="adult_child">Adult child</option>
               <option value="spouse">Spouse</option>
               <option value="other_relative">Other relative</option>
@@ -449,43 +455,48 @@
           </div>
 
           <div class="full">
-            <label for="email">Email (optional)</label>
+            <label for="email">Email address</label>
             <input
               id="email"
               name="email"
               type="email"
-              placeholder="Only if you're open to a follow-up question"
+              required
+              placeholder="name@example.com"
             />
+            <div class="helper">
+              We’ll send a confirmation email before we review or use your story. This helps us make sure submissions come from real people with firsthand experience.
+            </div>
           </div>
         </div>
 
         <div class="privacy-box">
-  <strong>Shared carefully</strong>
-  <p class="muted" style="margin: 8px 0 14px;">
-    We do not display resident names or family names. Stories may be reviewed, anonymized,
-    and summarized to help other families and improve the guidance Compass Place provides.
-  </p>
+          <strong>Shared carefully</strong>
+          <p class="muted" style="margin: 8px 0 14px;">
+            We do not display resident names or family names. Stories may be reviewed, anonymized,
+            and summarized to help other families and improve the guidance Compass Place provides.
+          </p>
+          <p class="muted" style="margin: 8px 0 14px;">
+            We may contact you to confirm your submission or ask a clarifying question before using your story.
+          </p>
 
-  <div class="checkbox-row">
-    <label class="checkbox-item" for="allow_anonymous_summary">
-      <input type="checkbox" id="allow_anonymous_summary" name="allow_anonymous_summary" />
-      <span>You may summarize my story anonymously</span>
-    </label>
+          <div class="checkbox-row">
+            <label class="checkbox-item" for="allow_anonymous_summary">
+              <input type="checkbox" id="allow_anonymous_summary" name="allow_anonymous_summary" />
+              <span>You may summarize my story anonymously</span>
+            </label>
 
-    <label class="checkbox-item" for="allow_followup">
-      <input type="checkbox" id="allow_followup" name="allow_followup" />
-      <span>You may contact me if clarification would help</span>
-    </label>
-  </div>
-</div>
+            <label class="checkbox-item" for="allow_followup">
+              <input type="checkbox" id="allow_followup" name="allow_followup" />
+              <span>You may contact me if clarification would help</span>
+            </label>
+          </div>
+        </div>
 
-<div style="margin-top: 24px;">
-  <button type="submit" class="btn btn-primary" id="submit-button">Submit Story</button>
-</div>
+        <div style="margin-top: 24px;">
+          <button type="submit" class="btn btn-primary" id="submit-button">Submit Story</button>
+        </div>
 
-<div id="form-status" class="status-message" aria-live="polite"></div>
-
-
+        <div id="form-status" class="status-message" aria-live="polite"></div>
       </form>
     </div>
   </section>
@@ -503,7 +514,7 @@
 
   <script>
     const SUPABASE_URL = "https://vxlhnagcnhisvehhjblm.supabase.co";
-    const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ4bGhuYWdjbmhpc3ZlaGhqYmxtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjY3NzEzMTUsImV4cCI6MjA4MjM0NzMxNX0.bjLDGe3z4CDvxxVXZUKXs7anHXudXAGkZ5C0y3_1HRo";
+    const SUPABASE_ANON_KEY = "YOUR_SUPABASE_ANON_KEY";
     const HAMILTON_AREA_ID = "74e0f4b5-fcfc-478e-8432-d92d2c13ebca";
 
     const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
@@ -552,7 +563,7 @@
         recency_bucket: formData.get("recency_bucket"),
         care_setting: formData.get("care_setting") || null,
         story_text: (formData.get("story_text") || "").trim(),
-        email: (formData.get("email") || "").trim() || null,
+        email: (formData.get("email") || "").trim(),
         allow_followup: formData.get("allow_followup") === "on",
         allow_anonymous_summary: formData.get("allow_anonymous_summary") === "on",
         review_status: "new"
