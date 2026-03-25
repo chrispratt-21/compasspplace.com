@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tell Your Story | Compass Place</title>
+  <meta
+    name="description"
+    content="Share your story about navigating senior living in Hamilton County, Indiana."
+  />
+  <link rel="canonical" href="https://compassplace.com/tell-your-story" />
+
+  <script src="/cp-shell.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <style>
+    :root {
+      --color-bg: #FAFAF7;
+      --color-surface: #FFFFFF;
+      --color-primary: #2B5F4E;
+      --color-primary-light: #3A7D66;
+      --color-primary-muted: #E8F0EC;
+      --color-accent: #C4945A;
+      --color-text: #2C2C2C;
+      --color-text-secondary: #6B6B6B;
+      --color-border: #E5E2DC;
+      --font-display: 'DM Serif Display', Georgia, serif;
+      --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --max-width: 1100px;
+      --radius: 10px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--color-bg);
+      color: var(--color-text);
+      font-family: var(--font-body);
+      line-height: 1.7;
+    }
+
+    .section {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 64px 24px;
+    }
+
+    .hero {
+      background: linear-gradient(180deg, #F5F3EE 0%, #FAFAF7 100%);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .eyebrow {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 12px;
+    }
+
+    h1, h2, h3 {
+      font-family: var(--font-display);
+      color: var(--color-primary);
+      line-height: 1.2;
+      margin-top: 0;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      margin-bottom: 16px;
+    }
+
+    h2 {
+      font-size: clamp(1.7rem, 3vw, 2.2rem);
+      margin-bottom: 14px;
+    }
+
+    p.lead {
+      max-width: 780px;
+      font-size: 1.08rem;
+      color: var(--color-text-secondary);
+      margin: 0 0 24px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      border-radius: 8px;
+      padding: 14px 24px;
+      font-weight: 600;
+      transition: 0.2s ease;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 0.95rem;
+    }
+
+    .btn-primary {
+      background: var(--color-primary);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: var(--color-primary-light);
+    }
+
+    .btn-secondary {
+      background: #fff;
+      color: var(--color-primary);
+      border: 1px solid var(--color-border);
+    }
+
+    .btn-secondary:hover {
+      background: #f8f8f5;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 32px;
+    }
+
+    .muted {
+      color: var(--color-text-secondary);
+    }
+
+    .story-points {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    .story-point {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 22px;
+    }
+
+    .story-point h3 {
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+    }
+
+    .note {
+      font-size: 0.92rem;
+      color: var(--color-text-secondary);
+      margin-top: 18px;
+    }
+
+    .form-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 32px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 6px;
+      color: var(--color-text);
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid var(--color-border);
+      border-radius: 6px;
+      padding: 12px 14px;
+      font: inherit;
+      background: #fff;
+      color: var(--color-text);
+    }
+
+    textarea {
+      min-height: 180px;
+      resize: vertical;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: var(--color-primary);
+    }
+
+    .helper {
+      font-size: 0.9rem;
+      color: var(--color-text-secondary);
+      margin-top: 6px;
+    }
+
+    .checkbox-row {
+      display: grid;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .checkbox-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-weight: 500;
+      color: var(--color-text);
+      line-height: 1.5;
+      margin-bottom: 0;
+      cursor: pointer;
+    }
+
+    .checkbox-item input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      margin: 2px 0 0 0;
+      flex: 0 0 18px;
+    }
+
+    .checkbox-item span {
+      display: inline-block;
+    }
+
+    .privacy-box {
+      margin-top: 24px;
+      padding: 20px;
+      background: var(--color-primary-muted);
+      border-radius: 8px;
+    }
+
+    .status-message {
+      margin-top: 18px;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .status-success { color: var(--color-primary); }
+    .status-error { color: #9b2c2c; }
+
+    .footer-cta {
+      text-align: center;
+      padding-top: 0;
+    }
+
+    @media (max-width: 768px) {
+      .grid-2,
+      .story-points,
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="cp-header"></div>
+
+  <section class="hero">
+    <div class="section">
+      <div class="eyebrow">Hamilton County Family Perspective</div>
+      <h1>Tell Your Story</h1>
+      <p class="lead">
+        Share your story about navigating senior living in Hamilton County.
+      </p>
+      <p class="lead">
+        We are just beginning to collect family stories and lived experience from local senior communities.
+        Tours can be helpful, but they do not always show how communication feels over time, how a team responds
+        when concerns arise, or whether care is carried out with compassion and dignity.
+      </p>
+      <div class="hero-actions">
+        <a href="#story-form" class="btn btn-primary">Tell Your Story</a>
+        <a href="/" class="btn btn-secondary">Return to Compass Place</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="grid-2">
+      <div class="card">
+        <div class="eyebrow">Why Stories Matter</div>
+        <h2>What families learn over time can be hard to see on a tour</h2>
+        <p class="muted">
+          Senior care is not a perfect science. Needs change. Situations become complicated.
+          Some moments are routine. Others are difficult, emotional, or urgent.
+        </p>
+        <p class="muted">
+          What often shapes a family’s view of a community is not whether every experience was flawless,
+          but how the team responded when something important happened. Did they listen? Did they communicate
+          clearly? Did they try to make things right? Did they handle the situation with compassion, dignity,
+          and sincerity?
+        </p>
+        <p class="muted">
+          Positive stories matter too. Sometimes the best signs of a strong community only become clear after move-in,
+          and only if someone is willing to share what they saw.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="eyebrow">Starting Small</div>
+        <h2>We’re just beginning to collect local family stories</h2>
+        <p class="muted">
+          This is a new effort focused on Hamilton County. Over time, family stories may help reveal patterns
+          that are not always visible during a tour, including communication style, warmth, follow-through,
+          responsiveness, and day-to-day experience.
+        </p>
+        <p class="muted">
+          At this stage, we are not publishing family names or resident names. We are listening, learning,
+          and building a more grounded picture of local communities.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="eyebrow">Helpful Storytelling</div>
+    <h2>What kinds of stories are most helpful</h2>
+    <p class="muted">
+      You do not need to write a formal review. Honest, specific stories are more useful than ratings.
+    </p>
+
+    <div class="story-points">
+      <div class="story-point">
+        <h3>A moment that shaped your view</h3>
+        <p class="muted">Was there a specific moment that changed how you felt about the community, positively or negatively?</p>
+      </div>
+      <div class="story-point">
+        <h3>How the team responded</h3>
+        <p class="muted">If a concern came up, did they take it seriously, communicate clearly, and try to resolve it?</p>
+      </div>
+      <div class="story-point">
+        <h3>How your loved one was treated</h3>
+        <p class="muted">Did the care feel respectful, warm, and dignified day to day?</p>
+      </div>
+      <div class="story-point">
+        <h3>What another family should ask</h3>
+        <p class="muted">What would you want another family to understand before choosing this community?</p>
+      </div>
+    </div>
+
+    <p class="note">
+      These are prompts, not ratings. We are looking for thoughtful family perspective, including both positive experiences and hard-earned lessons.
+    </p>
+  </section>
+
+  <section class="section" id="story-form">
+    <div class="form-card">
+      <div class="eyebrow">Tell Your Story</div>
+      <h2>Share what another family should understand</h2>
+
+      <form id="family-story-form">
+        <div class="form-grid">
+          <div>
+            <label for="facility_id">Community</label>
+            <select id="facility_id" name="facility_id">
+              <option value="">Select a Hamilton County community</option>
+            </select>
+            <div class="helper">If you do not see the community listed, use the field below.</div>
+          </div>
+
+          <div>
+            <label for="community_name_raw">Community name (if not listed)</label>
+            <input
+              id="community_name_raw"
+              name="community_name_raw"
+              type="text"
+              placeholder="Enter the community name"
+            />
+          </div>
+
+          <div>
+            <label for="relationship">Your connection to this story</label>
+            <select id="relationship" name="relationship" required>
+              <option value="">Select one</option>
+              <option value="self">It's me</option>
+              <option value="adult_child">Adult child</option>
+              <option value="spouse">Spouse</option>
+              <option value="other_relative">Other relative</option>
+              <option value="friend">Friend</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="experience_type">Type of experience</label>
+            <select id="experience_type" name="experience_type" required>
+              <option value="">Select one</option>
+              <option value="current_resident_family">Current resident family</option>
+              <option value="former_resident_family">Former resident family</option>
+              <option value="tour_only">Tour only</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="recency_bucket">How recent was this experience?</label>
+            <select id="recency_bucket" name="recency_bucket" required>
+              <option value="">Select one</option>
+              <option value="last_3_months">Within the last 3 months</option>
+              <option value="3_to_6_months">3–6 months ago</option>
+              <option value="6_to_12_months">6–12 months ago</option>
+              <option value="more_than_1_year">More than a year ago</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="care_setting">Care setting</label>
+            <select id="care_setting" name="care_setting">
+              <option value="">Select one</option>
+              <option value="assisted_living">Assisted living</option>
+              <option value="memory_care">Memory care</option>
+              <option value="skilled_nursing">Skilled nursing</option>
+              <option value="independent_living">Independent living</option>
+              <option value="other_or_not_sure">Other / not sure</option>
+            </select>
+          </div>
+
+          <div class="full">
+            <label for="story_text">What would you want another family to understand about this community?</label>
+            <textarea
+              id="story_text"
+              name="story_text"
+              required
+              placeholder="You can share a positive experience, a difficult moment, how the team responded to a concern, or what another family should ask before choosing this community."
+            ></textarea>
+            <div class="helper">
+              Helpful angles: a moment that shaped your view, how concerns were handled, whether communication felt proactive, whether your loved one was treated with dignity, or what surprised you after move-in.
+            </div>
+          </div>
+
+          <div class="full">
+            <label for="email">Email address</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              required
+              placeholder="name@example.com"
+            />
+            <div class="helper">
+              We’ll send a confirmation email before we review or use your story. This helps us make sure submissions come from real people with firsthand experience.
+            </div>
+          </div>
+        </div>
+
+        <div class="privacy-box">
+          <strong>Shared carefully</strong>
+          <p class="muted" style="margin: 8px 0 14px;">
+            We do not display resident names or family names. Stories may be reviewed, anonymized,
+            and summarized to improve the guidance Compass Place provides.
+          </p>
+          <p class="muted" style="margin: 8px 0 14px;">
+            We may contact you to confirm your submission or ask a clarifying question before using your story.
+          </p>
+
+          <div class="checkbox-row">
+            <label class="checkbox-item" for="allow_anonymous_summary">
+              <input type="checkbox" id="allow_anonymous_summary" name="allow_anonymous_summary" />
+              <span>You may summarize my story anonymously</span>
+            </label>
+
+            <label class="checkbox-item" for="allow_followup">
+              <input type="checkbox" id="allow_followup" name="allow_followup" />
+              <span>You may contact me if clarification would help</span>
+            </label>
+          </div>
+        </div>
+
+        <div style="margin-top: 24px;">
+          <button type="submit" class="btn btn-primary" id="submit-button">Tell Your Story</button>
+        </div>
+
+        <div id="form-status" class="status-message" aria-live="polite"></div>
+      </form>
+    </div>
+  </section>
+
+  <section class="section footer-cta">
+    <h2>Your story may add useful perspective</h2>
+    <p class="lead" style="margin: 0 auto 24px;">
+      Families often only understand what really matters after a loved one has already moved in.
+      Sharing what you observed may add perspective that is hard to see on a tour.
+    </p>
+    <a href="/" class="btn btn-secondary">Back to Compass Place</a>
+  </section>
+
+  <div id="cp-footer"></div>
+
+  <script>
+    const SUPABASE_URL = "https://vxlhnagcnhisvehhjblm.supabase.co";
+    const SUPABASE_ANON_KEY = "YOUR_SUPABASE_ANON_KEY";
+    const HAMILTON_AREA_ID = "74e0f4b5-fcfc-478e-8432-d92d2c13ebca";
+
+    const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    const facilitySelect = document.getElementById("facility_id");
+    const form = document.getElementById("family-story-form");
+    const statusEl = document.getElementById("form-status");
+    const submitButton = document.getElementById("submit-button");
+
+    async function loadFacilities() {
+      const { data, error } = await supabaseClient
+        .from("facilities")
+        .select("id, name")
+        .eq("status", "live")
+        .eq("area_id", HAMILTON_AREA_ID)
+        .order("name", { ascending: true });
+
+      if (error) {
+        console.error("Error loading facilities:", error);
+        return;
+      }
+
+      data.forEach((facility) => {
+        const option = document.createElement("option");
+        option.value = facility.id;
+        option.textContent = facility.name;
+        facilitySelect.appendChild(option);
+      });
+    }
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      statusEl.textContent = "";
+      statusEl.className = "status-message";
+      submitButton.disabled = true;
+      submitButton.textContent = "Submitting...";
+
+      const formData = new FormData(form);
+
+      const payload = {
+        facility_id: formData.get("facility_id") || null,
+        community_name_raw: (formData.get("community_name_raw") || "").trim() || null,
+        relationship: formData.get("relationship"),
+        experience_type: formData.get("experience_type"),
+        recency_bucket: formData.get("recency_bucket"),
+        care_setting: formData.get("care_setting") || null,
+        story_text: (formData.get("story_text") || "").trim(),
+        email: (formData.get("email") || "").trim(),
+        allow_followup: formData.get("allow_followup") === "on",
+        allow_anonymous_summary: formData.get("allow_anonymous_summary") === "on",
+        review_status: "new"
+      };
+
+      if (!payload.facility_id && !payload.community_name_raw) {
+        statusEl.textContent = "Please choose a community from the list or enter the community name.";
+        statusEl.classList.add("status-error");
+        submitButton.disabled = false;
+        submitButton.textContent = "Tell Your Story";
+        return;
+      }
+
+      const { error } = await supabaseClient
+        .from("family_story_submissions")
+        .insert([payload]);
+
+      if (error) {
+        console.error("Insert error:", error);
+        statusEl.textContent = "Something went wrong while submitting your story. Please try again.";
+        statusEl.classList.add("status-error");
+      } else {
+        form.reset();
+        statusEl.textContent = "Thank you. Your story has been received.";
+        statusEl.classList.add("status-success");
+      }
+
+      submitButton.disabled = false;
+      submitButton.textContent = "Tell Your Story";
+    });
+
+    loadFacilities();
+  </script>
+</body>
+</html>
