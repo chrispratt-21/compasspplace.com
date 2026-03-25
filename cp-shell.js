@@ -264,7 +264,7 @@
           <a href="https://www.linkedin.com/company/compassplace" target="_blank" rel="noopener noreferrer" aria-label="Compass Place on LinkedIn" title="LinkedIn">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4V9h4v2"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
           </a>
-          <a href="https://www.google.com/maps/place/Compass+Place/" target="_blank" rel="noopener noreferrer" aria-label="Compass Place on Google Maps" title="Google Maps">
+          <a href="https://www.google.com/maps/search/?api=1&query=Compass+Place+Fishers+IN" target="_blank" rel="noopener noreferrer" aria-label="Compass Place on Google Maps" title="Google Maps">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
           </a>
         </div>
