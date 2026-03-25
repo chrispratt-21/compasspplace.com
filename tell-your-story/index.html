@@ -6,9 +6,9 @@
   <title>Tell Your Story | Compass Place</title>
   <meta
     name="description"
-    content="Share your story about navigating senior living in Hamilton County, Indiana."
+    content="Share your story about navigating senior living in Hamilton County, Indiana or Franklin County, Ohio."
   />
-  <link rel="canonical" href="https://compassplace.com/tell-your-story" />
+  <link rel="canonical" href="https://compassplace.com/tell-your-story/" />
 
   <script src="/cp-shell.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -78,7 +78,7 @@
     }
 
     p.lead {
-      max-width: 780px;
+      max-width: 820px;
       font-size: 1.08rem;
       color: var(--color-text-secondary);
       margin: 0 0 24px;
@@ -284,10 +284,10 @@
 
   <section class="hero">
     <div class="section">
-      <div class="eyebrow">Hamilton County Family Perspective</div>
+      <div class="eyebrow">Local Family Perspective</div>
       <h1>Tell Your Story</h1>
       <p class="lead">
-        Share your story about navigating senior living in Hamilton County, Indiana.
+        Share your story about navigating senior living in Hamilton County, Indiana or Franklin County, Ohio.
       </p>
       <p class="lead">
         We collect family stories and lived experience from local senior communities.
@@ -324,15 +324,15 @@
 
       <div class="card">
         <div class="eyebrow">Starting Small</div>
-        <h2>We collect local family stories</h2>
+        <h2>We’re just beginning to collect local family stories</h2>
         <p class="muted">
-          This is an exciting effort focused on Hamilton County, Indiana. Over time, family stories may help reveal patterns
+          This is an exciting effort focused on active Compass Place areas. Over time, family stories may help reveal patterns
           that are not always visible during a tour, including communication style, warmth, follow-through,
           responsiveness, and day-to-day experience.
         </p>
         <p class="muted">
           We do not publish family names or resident names. We are listening, learning,
-          and striving to build a more grounded picture of local communities.
+          and building a more grounded picture of local communities.
         </p>
       </div>
     </div>
@@ -377,14 +377,22 @@
       <form id="family-story-form">
         <div class="form-grid">
           <div>
-            <label for="facility_id">Community</label>
-            <select id="facility_id" name="facility_id">
-              <option value="">Select a Hamilton County community</option>
+            <label for="area_id">Area</label>
+            <select id="area_id" name="area_id" required>
+              <option value="">Select an area</option>
             </select>
-            <div class="helper">If you do not see the community listed, use the field below.</div>
+            <div class="helper">Choose one of the active Compass Place areas.</div>
           </div>
 
           <div>
+            <label for="facility_id">Community</label>
+            <select id="facility_id" name="facility_id" disabled>
+              <option value="">Select a community</option>
+            </select>
+            <div class="helper">Choose an area first, then select a community.</div>
+          </div>
+
+          <div class="full">
             <label for="community_name_raw">Community name (if not listed)</label>
             <input
               id="community_name_raw"
@@ -514,22 +522,47 @@
 
   <script>
     const SUPABASE_URL = "https://vxlhnagcnhisvehhjblm.supabase.co";
-    const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ4bGhuYWdjbmhpc3ZlaGhqYmxtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjY3NzEzMTUsImV4cCI6MjA4MjM0NzMxNX0.bjLDGe3z4CDvxxVXZUKXs7anHXudXAGkZ5C0y3_1HRo";
-    const HAMILTON_AREA_ID = "74e0f4b5-fcfc-478e-8432-d92d2c13ebca";
+    const SUPABASE_ANON_KEY = "YOUR_SUPABASE_ANON_KEY";
 
     const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
+    const areaSelect = document.getElementById("area_id");
     const facilitySelect = document.getElementById("facility_id");
     const form = document.getElementById("family-story-form");
     const statusEl = document.getElementById("form-status");
     const submitButton = document.getElementById("submit-button");
 
-    async function loadFacilities() {
+    async function loadAreas() {
+      const { data, error } = await supabaseClient
+        .from("areas")
+        .select("id, display_name")
+        .eq("is_active", true)
+        .order("display_name", { ascending: true });
+
+      if (error) {
+        console.error("Error loading areas:", error);
+        return;
+      }
+
+      data.forEach((area) => {
+        const option = document.createElement("option");
+        option.value = area.id;
+        option.textContent = area.display_name;
+        areaSelect.appendChild(option);
+      });
+    }
+
+    async function loadFacilitiesForArea(areaId) {
+      facilitySelect.innerHTML = '<option value="">Select a community</option>';
+      facilitySelect.disabled = true;
+
+      if (!areaId) return;
+
       const { data, error } = await supabaseClient
         .from("facilities")
         .select("id, name")
         .eq("status", "live")
-        .eq("area_id", HAMILTON_AREA_ID)
+        .eq("area_id", areaId)
         .order("name", { ascending: true });
 
       if (error) {
@@ -543,7 +576,13 @@
         option.textContent = facility.name;
         facilitySelect.appendChild(option);
       });
+
+      facilitySelect.disabled = false;
     }
+
+    areaSelect.addEventListener("change", (event) => {
+      loadFacilitiesForArea(event.target.value);
+    });
 
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
@@ -556,6 +595,7 @@
       const formData = new FormData(form);
 
       const payload = {
+        area_id: formData.get("area_id") || null,
         facility_id: formData.get("facility_id") || null,
         community_name_raw: (formData.get("community_name_raw") || "").trim() || null,
         relationship: formData.get("relationship"),
@@ -568,6 +608,14 @@
         allow_anonymous_summary: formData.get("allow_anonymous_summary") === "on",
         review_status: "new"
       };
+
+      if (!payload.area_id) {
+        statusEl.textContent = "Please select an area.";
+        statusEl.classList.add("status-error");
+        submitButton.disabled = false;
+        submitButton.textContent = "Tell Your Story";
+        return;
+      }
 
       if (!payload.facility_id && !payload.community_name_raw) {
         statusEl.textContent = "Please choose a community from the list or enter the community name.";
@@ -587,6 +635,8 @@
         statusEl.classList.add("status-error");
       } else {
         form.reset();
+        facilitySelect.innerHTML = '<option value="">Select a community</option>';
+        facilitySelect.disabled = true;
         statusEl.textContent = "Thank you. Your story has been received.";
         statusEl.classList.add("status-success");
       }
@@ -595,7 +645,7 @@
       submitButton.textContent = "Tell Your Story";
     });
 
-    loadFacilities();
+    loadAreas();
   </script>
 </body>
 </html>
