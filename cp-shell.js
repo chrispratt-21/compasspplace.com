@@ -238,7 +238,7 @@
           <a href="https://compassplace.com/resources/">Resources</a>
           <a href="https://compassplace.com/tell-your-story/">
             <span class="cp-label-desktop">Tell Your Story</span>
-            <span class="cp-label-mobile">Tell a Story</span>
+            <span class="cp-label-mobile">Stories</span>
           </a>
           <a href="https://compassplace.com/faq/">FAQ</a>
           <a href="https://compassplace.com/get/" class="cp-nav-cta">Get the App</a>
