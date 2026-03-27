@@ -28,6 +28,19 @@
       box-sizing: border-box;
       font-family: inherit;
     }
+    .cp-label-mobile {
+      display: none;
+    }
+
+    @media (max-width: 860px) {
+      .cp-label-desktop {
+        display: none;
+     }
+
+      .cp-label-mobile {
+        display: inline;
+       }
+     }
 
     /* ── Header ── */
     .cp-header {
@@ -225,6 +238,8 @@
           <a href="https://compassplace.com/senior-living/">Senior Living</a>
           <a href="https://compassplace.com/resources/">Resources</a>
           <a href="https://compassplace.com/tell-your-story/">Tell Your Story</a>
+	    <span class="cp-label-desktop">Tell Your Story</span>
+    	    <span class="cp-label-mobile">Tell a Story</span>
           <a href="https://compassplace.com/faq/">FAQ</a>
           <a href="https://compassplace.com/get/" class="cp-nav-cta">Get the App</a>
         </nav>
