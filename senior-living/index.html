@@ -4,15 +4,31 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Senior Living | Compass Place</title>
-  <meta name="description" content="Browse senior living with Compass Place. Start with Indiana and Hamilton County, then explore city hubs and community pages privately, at your own pace." />
+  <meta
+    name="description"
+    content="Browse senior living by location with Compass Place. Start with current markets, move into local area and city pages, and compare communities privately, at your own pace."
+  />
   <link rel="canonical" href="https://compassplace.com/senior-living/" />
+
   <meta property="og:title" content="Senior Living | Compass Place" />
-  <meta property="og:description" content="Browse senior living by geography with Compass Place. Start with Indiana and Hamilton County, then compare communities privately." />
+  <meta
+    property="og:description"
+    content="Browse senior living by geography with Compass Place. Explore current markets, local area pages, city hubs, and community pages privately, at your own pace."
+  />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://compassplace.com/senior-living/" />
   <meta property="og:site_name" content="Compass Place" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Senior Living | Compass Place","description":"A Compass Place hub for browsing senior living by geography.","url":"https://compassplace.com/senior-living/"}</script>
-  
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Senior Living | Compass Place",
+    "description": "Browse senior living by geography with Compass Place. Start broad, then move into local area, city, and community pages.",
+    "url": "https://compassplace.com/senior-living/"
+  }
+  </script>
+
   <style>
     :root {
       --bg: #fafaf7;
@@ -25,8 +41,13 @@
       --accent: #c4945a;
       --max: 1120px;
       --radius: 12px;
+      --shadow: 0 12px 30px rgba(33, 39, 34, 0.05);
     }
-    * { box-sizing: border-box; }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -34,47 +55,36 @@
       color: var(--text);
       line-height: 1.65;
     }
-    a { color: var(--primary); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .topbar {
-      background: #ffffff;
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-    .topbar-inner {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 16px 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-    }
-    .brand {
-      font-weight: 700;
+
+    a {
       color: var(--primary);
-      font-size: 1.1rem;
+      text-decoration: none;
     }
-    .app-link {
-      background: var(--primary);
-      color: #fff;
-      padding: 10px 14px;
-      border-radius: 999px;
-      font-weight: 600;
-      display: inline-block;
+
+    a:hover {
+      text-decoration: underline;
     }
-    .app-link:hover { text-decoration: none; background: var(--primary-light); }
-    .hero {
+
+    .wrap {
       max-width: var(--max);
       margin: 0 auto;
-      padding: 56px 24px 36px;
-      display: grid;
-      grid-template-columns: 1.7fr 1fr;
-      gap: 32px;
-      align-items: start;
+      padding: 0 24px;
     }
+
+    .hero {
+      padding: 44px 0 30px;
+    }
+
+    .breadcrumbs {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      margin-bottom: 18px;
+    }
+
+    .breadcrumbs a {
+      color: var(--text-secondary);
+    }
+
     .eyebrow {
       color: var(--accent);
       font-weight: 700;
@@ -83,60 +93,55 @@
       font-size: 0.82rem;
       margin-bottom: 12px;
     }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.45fr 0.95fr;
+      gap: 32px;
+      align-items: start;
+    }
+
     h1 {
       margin: 0 0 16px;
-      font-size: clamp(2rem, 4vw, 3.25rem);
+      font-size: clamp(2rem, 4vw, 3.2rem);
       line-height: 1.12;
       color: var(--primary);
     }
-    .hero p {
-      font-size: 1.06rem;
+
+    .hero-copy p {
       margin: 0 0 16px;
-      color: var(--text);
+      font-size: 1.05rem;
     }
-    .breadcrumbs {
-      font-size: 0.95rem;
-      color: var(--text-secondary);
-      margin-bottom: 18px;
-    }
-    .breadcrumbs a { color: var(--text-secondary); }
-    .hero-card, .card, .notice {
+
+    .hero-card,
+    .card,
+    .notice {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 18px;
-      box-shadow: 0 12px 30px rgba(33, 39, 34, 0.05);
+      box-shadow: var(--shadow);
     }
-    .hero-card { padding: 22px; }
-    .section {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 0 24px 34px;
+
+    .hero-card {
+      padding: 22px;
     }
-    .section h2 {
-      color: var(--primary);
-      font-size: 1.7rem;
-      margin: 0 0 12px;
-    }
-    .section-intro {
-      max-width: 760px;
-      color: var(--text-secondary);
-      margin: 0 0 24px;
-    }
+
     .stats-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
+      gap: 14px;
     }
+
     .stat-card {
       min-height: 138px;
-      padding: 18px 18px 16px 18px;
+      padding: 18px 16px;
       border: 1px solid #d8d2c8;
       border-radius: 16px;
       background: #ece9e3;
       display: flex;
       flex-direction: column;
-      box-sizing: border-box;
     }
+
     .stat-label {
       font-size: 0.82rem;
       line-height: 1.35;
@@ -144,6 +149,7 @@
       text-transform: uppercase;
       color: #6f6658;
     }
+
     .stat-value {
       margin-top: auto;
       padding-top: 12px;
@@ -153,12 +159,93 @@
       font-weight: 700;
       color: #1f5c4f;
     }
-    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
-    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-    .card { padding: 22px; }
-    .card h3 { margin: 0 0 10px; color: var(--primary); font-size: 1.2rem; }
-    .card p { margin: 0 0 12px; color: var(--text-secondary); }
-    .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 14px; }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 16px;
+      border-radius: 999px;
+      font-weight: 700;
+      border: 1px solid var(--primary);
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-light);
+      text-decoration: none;
+    }
+
+    .btn-secondary {
+      color: var(--primary);
+      background: transparent;
+    }
+
+    .btn-secondary:hover {
+      text-decoration: none;
+      background: #f1f6f3;
+    }
+
+    .section {
+      padding: 0 0 34px;
+    }
+
+    .section h2 {
+      color: var(--primary);
+      font-size: 1.7rem;
+      margin: 0 0 12px;
+    }
+
+    .section-intro {
+      max-width: 760px;
+      color: var(--text-secondary);
+      margin: 0 0 24px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      padding: 22px;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      color: var(--primary);
+      font-size: 1.2rem;
+      line-height: 1.3;
+    }
+
+    .card p {
+      margin: 0 0 12px;
+      color: var(--text-secondary);
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 10px 0 14px;
+    }
+
     .pill {
       display: inline-block;
       padding: 6px 10px;
@@ -169,34 +256,35 @@
       font-size: 0.9rem;
       font-weight: 600;
     }
-    ul.link-list { margin: 0; padding-left: 20px; }
-    ul.link-list li { margin: 6px 0; }
+
+    .link-list {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .link-list li {
+      margin: 6px 0;
+    }
+
     .notice {
-      padding: 20px 22px;
+      padding: 22px;
       background: #f8f7f3;
     }
-    .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
-    .btn {
-      display: inline-block;
-      padding: 12px 16px;
-      border-radius: 999px;
-      font-weight: 700;
-      border: 1px solid var(--primary);
+
+    .notice p:last-child,
+    .card p:last-child {
+      margin-bottom: 0;
     }
-    .btn-primary { background: var(--primary); color: #fff; }
-    .btn-secondary { color: var(--primary); background: transparent; }
-    footer {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 18px 24px 46px;
-      color: var(--text-secondary);
-      font-size: 0.95rem;
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .grid-2,
+      .grid-3,
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
     }
-    @media (max-width: 860px) {
-      .hero, .grid-2, .grid-3, .stats-grid { grid-template-columns: 1fr; }
-      .topbar-inner { padding: 14px 18px; }
-    }
-</style>
+  </style>
 
   <script src="/cp-shell.js"></script>
 </head>
@@ -204,101 +292,138 @@
 
   <div id="cp-header"></div>
 
-
-  <section class="hero">
-    <div>
-      <div class="breadcrumbs"><a href="https://compassplace.com/">Home</a> / Senior Living</div>
-      <div class="eyebrow">Directory hub</div>
-      <h1>Senior Living, organized for real family decisions.</h1>
-      <p>Compass Place helps families explore senior living privately, compare communities by geography, and move at their own pace instead of getting rushed into outreach before they are ready.</p>
-      <p>This page is the top of the senior-living branch. Start with the state we currently cover, then move into county, city, and community pages as your search gets more specific.</p>
-      <div class="cta-row">
-        <a class="btn btn-primary" href="/senior-living/indiana/">Browse Indiana</a>
-        <a class="btn btn-secondary" href="https://compassplace.com/app/">Open the App</a>
+  <main class="wrap">
+    <section class="hero">
+      <div class="breadcrumbs">
+        <a href="https://compassplace.com/">Home</a> / Senior Living
       </div>
-    </div>
-    <div class="hero-card">
-      <div class="stats-grid">
-        <div class="stat-card">
-          <div class="stat-label">States live now</div>
-          <div class="stat-value">1</div>
+
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">Senior living hub</div>
+          <h1>Browse senior living by location, without getting pushed before you’re ready.</h1>
+          <p>
+            Compass Place helps families explore senior living privately, compare options with more context, and move at their own pace.
+          </p>
+          <p>
+            This page is the starting point for the senior living branch of the site. From here, you can move into state, area, city, and community pages as your search becomes more specific.
+          </p>
+
+          <div class="cta-row">
+            <a class="btn btn-primary" href="/senior-living/indiana/">Browse Indiana</a>
+            <a class="btn btn-secondary" href="https://compassplace.com/get/">Get the App</a>
+          </div>
         </div>
-        <div class="stat-card">
-          <div class="stat-label">County hubs live now</div>
-          <div class="stat-value">1</div>
+
+        <div class="hero-card">
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-label">States live now</div>
+              <div class="stat-value">1</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">Area hubs live now</div>
+              <div class="stat-value">1</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">City hubs live now</div>
+              <div class="stat-value">5</div>
+            </div>
+          </div>
         </div>
-        <div class="stat-card">
-          <div class="stat-label">City hubs live now</div>
-          <div class="stat-value">5</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Start broad, then narrow</h2>
+      <p class="section-intro">
+        The site is organized to help families move from a broad market view into more local pages and, eventually, specific community details. That makes the browsing experience easier to follow and easier to expand market by market.
+      </p>
+
+      <div class="grid-3">
+        <div class="card">
+          <h3>State pages</h3>
+          <p>
+            State pages introduce the markets currently live within a state and create a clean structure for future expansion.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Area pages</h3>
+          <p>
+            Area pages group the parts of a metro or region that families commonly compare together before narrowing to a city or neighborhood.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>City and community pages</h3>
+          <p>
+            City pages help families browse a manageable local list. Community pages go deeper into care types, scores, and comparison support.
+          </p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section">
-    <h2>Browse by geography</h2>
-    <p class="section-intro">Right now, Compass Place is publicly organized around Indiana, with Hamilton County as the current launch market. That gives families a clean path from broad browsing to specific community pages without losing the local context.</p>
-    <div class="grid-2">
-      <div class="card">
-        <h3><a href="/senior-living/indiana/">Indiana</a></h3>
-        <p>The state hub is the first layer beneath the senior-living root page. It introduces the current live market and prepares the structure for expansion into additional counties and metros over time.</p>
-        <div class="pill-row"><span class="pill">Current state hub</span><span class="pill">Scalable structure</span></div>
-        <a href="/senior-living/indiana/">Open Indiana hub</a>
-      </div>
-      <div class="card">
-        <h3><a href="/senior-living/indiana/hamilton-county-indiana/">Hamilton County, Indiana</a></h3>
-        <p>Hamilton County is the active launch market today. From there, families can move into Carmel, Fishers, Noblesville, Sheridan, and Westfield, then open individual community pages for deeper detail.</p>
-        <div class="pill-row"><span class="pill">36 communities</span><span class="pill">5 city hubs</span></div>
-        <a href="/senior-living/indiana/hamilton-county-indiana/">Open Hamilton County hub</a>
-      </div>
-    </div>
-  </section>
+    <section class="section">
+      <h2>Browse current coverage</h2>
+      <p class="section-intro">
+        Compass Place is currently live in Indiana, with Hamilton County as the first public market. Families can browse from the state hub into local city pages and then into individual communities.
+      </p>
 
-  <section class="section">
-    <h2>How this branch works</h2>
-    <div class="grid-3">
-      <div class="card">
-        <h3>Start broad</h3>
-        <p>Use the root page and state page to understand which markets are live and where to begin browsing.</p>
-      </div>
-      <div class="card">
-        <h3>Narrow by location</h3>
-        <p>Move from county to city so the list of communities becomes more manageable and more relevant to where a family actually wants to be.</p>
-      </div>
-      <div class="card">
-        <h3>Open community pages</h3>
-        <p>City hubs lead into community pages where families can review care types, scores, and fit before deciding whether to tour.</p>
-      </div>
-    </div>
-  </section>
+      <div class="grid-2">
+        <div class="card">
+          <h3><a href="/senior-living/indiana/">Indiana</a></h3>
+          <p>
+            The Indiana page is the current state hub and the first layer beneath this root page.
+          </p>
+          <div class="pill-row">
+            <span class="pill">Current state hub</span>
+            <span class="pill">Built for expansion</span>
+          </div>
+          <a href="/senior-living/indiana/">Open Indiana page</a>
+        </div>
 
-  <section class="section">
-    <h2>Current live market</h2>
-    <div class="card">
-      <h3>Indiana → Hamilton County</h3>
-      <p>These city hubs are live now:</p>
-      <ul class="link-list">
-        <li><a href="/senior-living/indiana/hamilton-county-indiana/carmel-indiana/">Carmel</a></li>
-        <li><a href="/senior-living/indiana/hamilton-county-indiana/fishers-indiana/">Fishers</a></li>
-        <li><a href="/senior-living/indiana/hamilton-county-indiana/noblesville-indiana/">Noblesville</a></li>
-        <li><a href="/senior-living/indiana/hamilton-county-indiana/sheridan-indiana/">Sheridan</a></li>
-        <li><a href="/senior-living/indiana/hamilton-county-indiana/westfield-indiana/">Westfield</a></li>
-      </ul>
-    </div>
-  </section>
+        <div class="card">
+          <h3><a href="/senior-living/indiana/hamilton-county-indiana/">Hamilton County, Indiana</a></h3>
+          <p>
+            Hamilton County is the current local market, with live city hubs for Carmel, Fishers, Noblesville, Sheridan, and Westfield.
+          </p>
+          <div class="pill-row">
+            <span class="pill">Area hub</span>
+            <span class="pill">5 city pages</span>
+          </div>
+          <a href="/senior-living/indiana/hamilton-county-indiana/">Open Hamilton County page</a>
+        </div>
+      </div>
+    </section>
 
-  <section class="section">
-    <div class="notice">
-      <h2>Coverage grows market by market</h2>
-      <p>Compass Place is being built to scale well beyond one county, but the public web structure is intentionally focused. That keeps the current branch useful and coherent instead of pretending every market is equally complete before it actually is.</p>
-      <p>Families may still see nearby communities in adjacent counties inside the app when those options are relevant to distance, but the live public senior-living branch is currently centered on Hamilton County.</p>
-    </div>
-  </section>
+    <section class="section">
+      <h2>Current city pages</h2>
+      <div class="card">
+        <ul class="link-list">
+          <li><a href="/senior-living/indiana/hamilton-county-indiana/carmel-indiana/">Carmel</a></li>
+          <li><a href="/senior-living/indiana/hamilton-county-indiana/fishers-indiana/">Fishers</a></li>
+          <li><a href="/senior-living/indiana/hamilton-county-indiana/noblesville-indiana/">Noblesville</a></li>
+          <li><a href="/senior-living/indiana/hamilton-county-indiana/sheridan-indiana/">Sheridan</a></li>
+          <li><a href="/senior-living/indiana/hamilton-county-indiana/westfield-indiana/">Westfield</a></li>
+        </ul>
+      </div>
+    </section>
 
-  
-  
+    <section class="section">
+      <div class="notice">
+        <h2>Coverage grows market by market</h2>
+        <p>
+          Compass Place is built to expand over time, but the public web structure is intentionally focused on markets that are actually live. That keeps the site more useful for families and gives each branch a clearer local identity.
+        </p>
+        <p>
+          As new markets are added, this same structure can extend cleanly into new state, area, city, and community pages without changing the logic of the site.
+        </p>
+      </div>
+    </section>
+  </main>
+
   <div id="cp-footer"></div>
-
 
 </body>
 </html>
