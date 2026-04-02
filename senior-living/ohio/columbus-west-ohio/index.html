@@ -4,23 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Senior Living in Columbus (West), Ohio | Compass Place</title>
-  <meta name="description" content="Explore west-side Columbus communities privately, at your own pace. Compare communities, review scores when available, and open full community pages with Compass Place." />
+  <meta name="description" content="Explore communities in west Columbus and nearby communities privately, at your own pace. Compare communities, review scores when available, and open full community pages with Compass Place." />
   <link rel="canonical" href="https://compassplace.com/senior-living/ohio/columbus-west-ohio/" />
   <meta property="og:title" content="Senior Living in Columbus (West), Ohio | Compass Place" />
-  <meta property="og:description" content="Explore west-side Columbus communities privately, at your own pace. Compare communities privately with Compass Place." />
+  <meta property="og:description" content="Explore communities in west Columbus and nearby communities privately, at your own pace. Compare communities privately with Compass Place." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://compassplace.com/senior-living/ohio/columbus-west-ohio/" />
   <meta property="og:site_name" content="Compass Place" />
   <script type="application/ld+json">
-  {
+{
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "name": "Senior Living in Columbus (West), Ohio | Compass Place",
-  "description": "Explore west-side Columbus communities privately, at your own pace.",
+  "description": "Explore communities in west Columbus and nearby communities privately, at your own pace.",
   "url": "https://compassplace.com/senior-living/ohio/columbus-west-ohio/",
   "about": {
     "@type": "Thing",
-    "name": "Senior living in Columbus (West), Ohio"
+    "name": "Columbus (West), Ohio"
   },
   "hasPart": {
     "@type": "ItemList",
@@ -129,8 +129,11 @@
     a:hover { text-decoration: underline; }
     .container { width: min(var(--max), calc(100% - 32px)); margin: 0 auto; }
     .hero, .section { padding: 28px 0; }
-    .hero-card, .card, .cta-block, .community-card, .notice { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); }
-    .hero-card, .card, .cta-block, .notice { padding: 28px; }
+    .hero-card, .card, .cta-block, .community-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); box-shadow: var(--shadow);
+    }
+    .hero-card, .card, .cta-block { padding: 28px; }
     .breadcrumb { font-size: 14px; color: var(--text-secondary); margin-bottom: 18px; }
     .breadcrumb a { color: var(--text-secondary); }
     .eyebrow { color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.82rem; margin-bottom: 12px; }
@@ -138,50 +141,48 @@
     h1 { font-size: clamp(2rem, 4vw, 3.15rem); }
     h2 { font-size: clamp(1.45rem, 2.8vw, 2rem); }
     .subhead { color: var(--text-secondary); font-size: 1.05rem; margin-bottom: 12px; }
-    .hero-grid { display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 24px; align-items: start; }
+    .hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 24px; align-items: start; }
     .hero-copy p { margin: 0 0 14px; }
     .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 18px; }
     .stat { min-height: 138px; padding: 18px; border: 1px solid var(--border); border-radius: 14px; background: var(--muted); display: flex; flex-direction: column; }
     .stat-label { font-size: 12px; line-height: 1.35; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary); }
     .stat-value { margin-top: auto; padding-top: 12px; text-align: center; font-size: 2rem; line-height: 1; font-weight: 700; color: var(--primary); }
-    .intro-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 22px; }
-    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-    .card p, .notice p, .cta-block p { margin: 0 0 12px; color: var(--text-secondary); }
-    .card p:last-child, .notice p:last-child, .cta-block p:last-child { margin-bottom: 0; }
-    .bullet-list { margin: 0; padding-left: 18px; color: var(--text-secondary); }
-    .bullet-list li { margin: 0 0 10px; }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 10px; padding: 0; margin: 18px 0 0; list-style: none; }
+    .pill-list li { padding: 8px 12px; border: 1px solid var(--border); background: #fff; border-radius: 999px; font-size: 0.92rem; color: var(--text); }
+    .section-intro { max-width: 800px; color: var(--text-secondary); margin: 0 0 22px; }
+    .city-block { margin-bottom: 28px; }
+    .city-heading { font-size: 1.35rem; color: var(--primary); margin-bottom: 14px; font-weight: 700; }
     .community-list { display: grid; gap: 18px; }
-    .community-card { display: grid; grid-template-columns: 170px 1fr; gap: 18px; align-items: start; padding: 18px; }
+    .community-card {
+      display: grid; grid-template-columns: 170px 1fr; gap: 18px; align-items: start; padding: 18px;
+    }
     .thumb img { width: 100%; height: 120px; object-fit: cover; border-radius: 14px; display: block; }
     .meta-top { display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; }
     .name-wrap h3 { margin-bottom: 6px; }
     .micro { color: var(--text-secondary); font-size: 0.95rem; }
-    .score-badge { min-width: 155px; padding: 12px 14px; border-radius: 14px; background: var(--badge); border: 1px solid #d5e6de; text-align: left; }
+    .score-badge {
+      min-width: 155px; padding: 12px 14px; border-radius: 14px; background: var(--badge);
+      border: 1px solid #d5e6de; text-align: left;
+    }
     .score-badge .label { font-size: 12px; text-transform: uppercase; color: var(--text-secondary); letter-spacing: 0.06em; }
     .score-badge .value { font-size: 1.35rem; font-weight: 700; color: var(--primary); }
     .care-tags { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 14px 0; }
     .care-tags li { padding: 7px 12px; border-radius: 999px; background: var(--muted); border: 1px solid var(--border); font-size: 0.94rem; }
-    .entry-links { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 12px; }
+    .entry-links { display:flex; flex-wrap: wrap; gap: 14px; margin-top: 12px; }
     .primary-link { font-weight: 700; }
-    .section-intro { max-width: 800px; color: var(--text-secondary); margin: 0 0 22px; }
-    .city-block { margin-bottom: 34px; }
-    .city-heading { font-size: 1.35rem; color: var(--primary); margin-bottom: 14px; }
-    .cta-button, .btn { display: inline-flex; align-items: center; justify-content: center; font-weight: 700; }
-    .cta-button { margin-top: 8px; padding: 13px 20px; border-radius: 999px; background: var(--primary); color: #fff; }
+    .cta-block p { margin: 0 0 12px; color: var(--text-secondary); }
+    .cta-button {
+      display: inline-flex; align-items: center; justify-content: center; margin-top: 8px;
+      padding: 13px 20px; border-radius: 999px; background: var(--primary); color: #fff; font-weight: 700;
+    }
     .cta-button:hover { background: var(--primary-light); text-decoration: none; }
-    .cta-row { display:flex; flex-wrap:wrap; gap:12px; margin-top:20px; }
-    .btn { padding: 12px 16px; border-radius: 999px; border: 1px solid var(--primary); }
-    .btn-primary { background: var(--primary); color:#fff; }
-    .btn-primary:hover { background: var(--primary-light); text-decoration:none; }
-    .btn-secondary { background: transparent; color:var(--primary); }
-    .btn-secondary:hover { background:#f1f6f3; text-decoration:none; }
     .disclaimer { margin-top: 16px; font-size: 0.92rem; color: var(--text-secondary); }
-    @media (max-width: 860px) {
-      .hero-grid, .intro-grid, .community-card, .stats-grid, .grid-3 { grid-template-columns: 1fr; }
+    @media (max-width: 900px) {
+      .hero-grid, .community-card, .stats-grid { grid-template-columns: 1fr; }
       .meta-top { flex-direction: column; }
       .score-badge { min-width: 0; width: 100%; }
     }
-</style>
+  </style>
   <script src="/cp-shell.js"></script>
 </head>
 <body>
@@ -194,60 +195,35 @@
             <a href="https://compassplace.com/">Home</a> /
             <a href="https://compassplace.com/senior-living/">Senior Living</a> /
             <a href="https://compassplace.com/senior-living/ohio/">Ohio</a> /
-            Columbus (west), ohio
+            Columbus (West), Ohio
           </div>
           <div class="hero-grid">
             <div class="hero-copy">
               <div class="eyebrow">Area page</div>
-              <h1>Senior living in Columbus (West), Ohio</h1>
-              <div class="subhead">Explore west-side Columbus communities privately, at your own pace.</div>
-              <p>Compass Place helps families compare senior living options without forcing a phone call or a rushed decision. Use this page to review the communities currently included in our Ohio dataset for west-side Columbus, then open any profile for more detail.</p>
-              <p>West Columbus makes more sense as a broader local comparison area than as a patchwork of smaller city pages, especially for families comparing Worthington, Upper Arlington, and nearby west-side Columbus options together.</p>
+              <h1>Senior Living in Columbus (West), Ohio</h1>
+              <div class="subhead">Explore communities in west Columbus and nearby communities privately, at your own pace.</div>
+              <p>The Columbus (West) area includes west-side Columbus communities as well as a few nearby communities families commonly evaluate in the same search. This page is designed to make that local comparison set easier to scan before you move into individual community pages.</p>
+              <p>Compass Place helps families explore senior living privately, at their own pace, without pushing them into outreach before they are ready.</p>
+              <a class="cta-button" href="https://compassplace.com/get/">Explore Senior Living Privately</a>
             </div>
-            <div>
-              <div class="stats-grid">
-                <div class="stat">
-                  <div class="stat-label">Communities on this page</div>
-                  <div class="stat-value">13</div>
-                </div>
-                <div class="stat">
-                  <div class="stat-label">Compass Place scored</div>
-                  <div class="stat-value">5</div>
-                </div>
-                <div class="stat">
-                  <div class="stat-label">Medicare or N/A</div>
-                  <div class="stat-value">8</div>
-                </div>
-              </div>
+            <div class="card">
+              <h3>What you’ll find in the app</h3>
+              <ul class="pill-list">
+                <li>Private exploration</li>
+                <li>Side-by-side comparisons</li>
+                <li>Performance-based scoring</li>
+                <li>Local insight</li>
+                <li>Optional Trail Guide support</li>
+              </ul>
+              <p style="margin-top:18px;color:var(--text-secondary);">
+                Communities in this area may display a Compass Place Inspection Score, a Medicare rating, or N/A for IL-only communities where no public comparison score is displayed.
+              </p>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <section class="section">
-      <div class="container">
-        <div class="card intro-grid">
-          <div>
-            <h2>How to use this area page</h2>
-            <p>This is a local browsing page, not a lead form. It is meant to help families get oriented before deciding which community pages to review more closely or which communities to compare in the app.</p>
-            <ul class="bullet-list">
-              <li>Every community listed here links to its own canonical Compass Place profile.</li>
-              <li>This area currently includes communities in Columbus, Worthington, Worthington Hills.</li>
-              <li>When a Compass Place score appears, it is shown on a 5-point scale. When a Medicare rating appears, it is labeled as Medicare’s overall rating.</li>
-            </ul>
-          </div>
-          <div>
-            <h2>What this page includes</h2>
-            <ul class="bullet-list">
-              <li>A practical local comparison set for families exploring the Columbus (West), Ohio.</li>
-              <li>Communities grouped by city where that helps scanning.</li>
-              <li>Score badges where a Compass Place score or Medicare rating is available.</li>
-              <li>Links into full community pages for deeper review.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
+
     <section class="section">
       <div class="container">
         <h2>Communities in this area</h2>
@@ -259,7 +235,7 @@
 
               <article class="community-card">
                 <div class="thumb">
-                  <a href="https://compassplace.com/community/claremont-retirement-village-columbus-oh/"><img src="https://compassplace.com/logo-social.png" alt="Claremont Retirement Village community profile" /></a>
+                  <a href="https://compassplace.com/community/claremont-retirement-village-columbus-oh/"><img src="https://crvillage.com/wp-content/uploads/2022/03/claremont-retirement-village-logo-horizontal.png" alt="Claremont Retirement Village community profile" /></a>
                 </div>
                 <div>
                   <div class="meta-top">
@@ -273,7 +249,7 @@
                     </div>
                   </div>
                   <ul class="care-tags"><li>Independent Living</li><li>Assisted Living</li><li>Memory Care</li></ul>
-                  <p>Claremont Retirement Village is part of the current Compass Place comparison set for the Columbus (West), Ohio.</p>
+                  <p>Claremont Retirement Village is part of the current Compass Place comparison set for the Columbus (West), Ohio area.</p>
                   <div class="micro">Compass Place derives this proprietary score from official inspection history and resolution patterns, translated into a 5-point scale for easier comparison.</div>
                   <div class="entry-links">
                     <a class="primary-link" href="https://compassplace.com/community/claremont-retirement-village-columbus-oh/">View community page</a>
@@ -283,7 +259,7 @@
 
               <article class="community-card">
                 <div class="thumb">
-                  <a href="https://compassplace.com/community/crown-pointe-care-center-columbus-oh/"><img src="https://compassplace.com/logo-social.png" alt="Crown Pointe Care Center community profile" /></a>
+                  <a href="https://compassplace.com/community/crown-pointe-care-center-columbus-oh/"><img src="https://crown-pointe.net/wp-content/uploads/sites/17/2024/12/crown19.jpg" alt="Crown Pointe Care Center community profile" /></a>
                 </div>
                 <div>
                   <div class="meta-top">
@@ -292,12 +268,12 @@
                       <div class="micro">Columbus, Ohio</div>
                     </div>
                     <div class="score-badge">
-                      <div class="label">Medicare Overall Rating</div>
+                      <div class="label">Medicare Rating</div>
                       <div class="value">3 / 5</div>
                     </div>
                   </div>
                   <ul class="care-tags"><li>Memory Care</li><li>Skilled Nursing</li></ul>
-                  <p>Crown Pointe Care Center is part of the current Compass Place comparison set for the Columbus (West), Ohio.</p>
+                  <p>Crown Pointe Care Center is part of the current Compass Place comparison set for the Columbus (West), Ohio area.</p>
                   <div class="micro">This is Medicare’s published overall nursing home rating. It applies to the skilled nursing portion of the community when that level of care is offered.</div>
                   <div class="entry-links">
                     <a class="primary-link" href="https://compassplace.com/community/crown-pointe-care-center-columbus-oh/">View community page</a>
@@ -307,7 +283,7 @@
 
               <article class="community-card">
                 <div class="thumb">
-                  <a href="https://compassplace.com/community/danbury-columbus-columbus-oh/"><img src="https://compassplace.com/logo-social.png" alt="Danbury Columbus community profile" /></a>
+                  <a href="https://compassplace.com/community/danbury-columbus-columbus-oh/"><img src="https://d2bsnvfgibl1g1.cloudfront.net/image/145023133959/image_nsnv6kamk12evf1l46j43e6b75/-Tsquare1:1-FWEBP" alt="Danbury Columbus community profile" /></a>
                 </div>
                 <div>
                   <div class="meta-top">
@@ -321,7 +297,7 @@
                     </div>
                   </div>
                   <ul class="care-tags"><li>Assisted Living</li><li>Memory Care</li></ul>
-                  <p>Danbury Columbus is part of the current Compass Place comparison set for the Columbus (West), Ohio.</p>
+                  <p>Danbury Columbus is part of the current Compass Place comparison set for the Columbus (West), Ohio area.</p>
                   <div class="micro">Compass Place derives this proprietary score from official inspection history and resolution patterns, translated into a 5-point scale for easier comparison.</div>
                   <div class="entry-links">
                     <a class="primary-link" href="https://compassplace.com/community/danbury-columbus-columbus-oh/">View community page</a>
@@ -331,7 +307,7 @@
 
               <article class="community-card">
                 <div class="thumb">
-                  <a href="https://compassplace.com/community/first-community-village-columbus-oh/"><img src="https://compassplace.com/logo-social.png" alt="First Community Village community profile" /></a>
+                  <a href="https://compassplace.com/community/first-community-village-columbus-oh/"><img src="https://www.nationalchurchresidences.org/wp-content/uploads/2025/09/FCV-Gate.jpg" alt="First Community Village community profile" /></a>
                 </div>
                 <div>
                   <div class="meta-top">
@@ -340,12 +316,12 @@
                       <div class="micro">Columbus, Ohio</div>
                     </div>
                     <div class="score-badge">
-                      <div class="label">Medicare Overall Rating</div>
+                      <div class="label">Medicare Rating</div>
                       <div class="value">4 / 5</div>
                     </div>
                   </div>
                   <ul class="care-tags"><li>Independent Living</li><li>Assisted Living</li><li>Memory Care</li><li>Skilled Nursing</li></ul>
-                  <p>First Community Village is part of the current Compass Place comparison set for the Columbus (West), Ohio.</p>
+                  <p>First Community Village is part of the current Compass Place comparison set for the Columbus (West), Ohio area.</p>
                   <div class="micro">This is Medicare’s published overall nursing home rating. It applies to the skilled nursing portion of the community when that level of care is offered.</div>
                   <div class="entry-links">
                     <a class="primary-link" href="https://compassplace.com/community/first-community-village-columbus-oh/">View community page</a>
@@ -355,7 +331,7 @@
 
               <article class="community-card">
                 <div class="thumb">
-                  <a href="https://compassplace.com/community/harrison-on-5th-by-senior-star-columbus-oh/"><img src="https://compassplace.com/logo-social.png" alt="Harrison on 5th by Senior Star community profile" /></a>
+                  <a href="https://compassplace.com/community/harrison-on-5th-by-senior-star-columbus-oh/"><img src="https://www.seniorstar.com/wp-content/uploads/2024/08/Harrison-on-5th-Gallery-35.webp" alt="Harrison on 5th by Senior Star community profile" /></a>
                 </div>
                 <div>
                   <div class="meta-top">
@@ -369,7 +345,7 @@
                     </div>
                   </div>
                   <ul class="care-tags"><li>Independent Living</li><li>Assisted Living</li><li>Memory Care</li></ul>
-                  <p>Harrison on 5th by Senior Star is part of the current Compass Place comparison set for the Columbus (West), Ohio.</p>
+                  <p>Harrison on 5th by Senior Star is part of the current Compass Place comparison set for the Columbus (West), Ohio area.</p>
                   <div class="micro">Compass Place derives this proprietary score from official inspection history and resolution patterns, translated into a 5-point scale for easier comparison.</div>
                   <div class="entry-links">
                     <a class="primary-link" href="https://compassplace.com/community/harrison-on-5th-by-senior-star-columbus-oh/">View community page</a>
@@ -379,7 +355,7 @@
 
               <article class="community-card">
                 <div class="thumb">
-                  <a href="https://compassplace.com/community/highbanks-care-center-columbus-oh/"><img src="https://compassplace.com/logo-social.png" alt="Highbanks Care Center community profile" /></a>
+                  <a href="https://compassplace.com/community/highbanks-care-center-columbus-oh/"><img src="https://highbanks-care.net/wp-content/uploads/sites/36/2025/01/highbanks_front-scaled.jpg" alt="Highbanks Care Center community profile" /></a>
                 </div>
                 <div>
                   <div class="meta-top">
@@ -388,12 +364,12 @@
                       <div class="micro">Columbus, Ohio</div>
                     </div>
                     <div class="score-badge">
-                      <div class="label">Medicare Overall Rating</div>
+                      <div class="label">Medicare Rating</div>
                       <div class="value">5 / 5</div>
                     </div>
                   </div>
                   <ul class="care-tags"><li>Skilled Nursing</li></ul>
-                  <p>Highbanks Care Center is part of the current Compass Place comparison set for the Columbus (West), Ohio.</p>
+                  <p>Highbanks Care Center is part of the current Compass Place comparison set for the Columbus (West), Ohio area.</p>
                   <div class="micro">This is Medicare’s published overall nursing home rating. It applies to the skilled nursing portion of the community when that level of care is offered.</div>
                   <div class="entry-links">
                     <a class="primary-link" href="https://compassplace.com/community/highbanks-care-center-columbus-oh/">View community page</a>
@@ -403,7 +379,7 @@
 
               <article class="community-card">
                 <div class="thumb">
-                  <a href="https://compassplace.com/community/ohio-living-westminster-thurber-columbus-oh/"><img src="https://compassplace.com/logo-social.png" alt="Ohio Living Westminster-Thurber community profile" /></a>
+                  <a href="https://compassplace.com/community/ohio-living-westminster-thurber-columbus-oh/"><img src="https://ohioliving.org/hubfs/Robb%20McCormick%20Photography%20(206%20of%20426).jpg" alt="Ohio Living Westminster-Thurber community profile" /></a>
                 </div>
                 <div>
                   <div class="meta-top">
@@ -412,12 +388,12 @@
                       <div class="micro">Columbus, Ohio</div>
                     </div>
                     <div class="score-badge">
-                      <div class="label">Medicare Overall Rating</div>
+                      <div class="label">Medicare Rating</div>
                       <div class="value">5 / 5</div>
                     </div>
                   </div>
                   <ul class="care-tags"><li>Independent Living</li><li>Assisted Living</li><li>Memory Care</li><li>Skilled Nursing</li></ul>
-                  <p>Ohio Living Westminster-Thurber is part of the current Compass Place comparison set for the Columbus (West), Ohio.</p>
+                  <p>Ohio Living Westminster-Thurber is part of the current Compass Place comparison set for the Columbus (West), Ohio area.</p>
                   <div class="micro">This is Medicare’s published overall nursing home rating. It applies to the skilled nursing portion of the community when that level of care is offered.</div>
                   <div class="entry-links">
                     <a class="primary-link" href="https://compassplace.com/community/ohio-living-westminster-thurber-columbus-oh/">View community page</a>
@@ -427,7 +403,7 @@
 
               <article class="community-card">
                 <div class="thumb">
-                  <a href="https://compassplace.com/community/sapphire-rehabilitation-and-care-center-columbus-oh/"><img src="https://compassplace.com/logo-social.png" alt="Sapphire Rehabilitation and Care Center community profile" /></a>
+                  <a href="https://compassplace.com/community/sapphire-rehabilitation-and-care-center-columbus-oh/"><img src="https://vxlhnagcnhisvehhjblm.supabase.co/storage/v1/object/public/facility-photos/4a36d733-9d13-410c-9d7c-3316f7bc6712/sapphire-5.PNG" alt="Sapphire Rehabilitation and Care Center community profile" /></a>
                 </div>
                 <div>
                   <div class="meta-top">
@@ -436,12 +412,12 @@
                       <div class="micro">Columbus, Ohio</div>
                     </div>
                     <div class="score-badge">
-                      <div class="label">Medicare Overall Rating</div>
+                      <div class="label">Medicare Rating</div>
                       <div class="value">2 / 5</div>
                     </div>
                   </div>
                   <ul class="care-tags"><li>Memory Care</li><li>Skilled Nursing</li></ul>
-                  <p>Sapphire Rehabilitation and Care Center is part of the current Compass Place comparison set for the Columbus (West), Ohio.</p>
+                  <p>Sapphire Rehabilitation and Care Center is part of the current Compass Place comparison set for the Columbus (West), Ohio area.</p>
                   <div class="micro">This is Medicare’s published overall nursing home rating. It applies to the skilled nursing portion of the community when that level of care is offered.</div>
                   <div class="entry-links">
                     <a class="primary-link" href="https://compassplace.com/community/sapphire-rehabilitation-and-care-center-columbus-oh/">View community page</a>
@@ -451,7 +427,7 @@
 
               <article class="community-card">
                 <div class="thumb">
-                  <a href="https://compassplace.com/community/willow-brook-christian-home-columbus-oh/"><img src="https://compassplace.com/logo-social.png" alt="Willow Brook Christian Home community profile" /></a>
+                  <a href="https://compassplace.com/community/willow-brook-christian-home-columbus-oh/"><img src="https://willow-brook.org/wp-content/uploads/willow-brook-staff-photo-5-1024x721.jpg" alt="Willow Brook Christian Home community profile" /></a>
                 </div>
                 <div>
                   <div class="meta-top">
@@ -460,12 +436,12 @@
                       <div class="micro">Columbus, Ohio</div>
                     </div>
                     <div class="score-badge">
-                      <div class="label">Medicare Overall Rating</div>
+                      <div class="label">Medicare Rating</div>
                       <div class="value">3 / 5</div>
                     </div>
                   </div>
                   <ul class="care-tags"><li>Assisted Living</li><li>Skilled Nursing</li></ul>
-                  <p>Willow Brook Christian Home is part of the current Compass Place comparison set for the Columbus (West), Ohio.</p>
+                  <p>Willow Brook Christian Home is part of the current Compass Place comparison set for the Columbus (West), Ohio area.</p>
                   <div class="micro">This is Medicare’s published overall nursing home rating. It applies to the skilled nursing portion of the community when that level of care is offered.</div>
                   <div class="entry-links">
                     <a class="primary-link" href="https://compassplace.com/community/willow-brook-christian-home-columbus-oh/">View community page</a>
@@ -475,7 +451,7 @@
 
               <article class="community-card">
                 <div class="thumb">
-                  <a href="https://compassplace.com/community/worthington-christian-village-columbus-oh/"><img src="https://compassplace.com/logo-social.png" alt="Worthington Christian Village community profile" /></a>
+                  <a href="https://compassplace.com/community/worthington-christian-village-columbus-oh/"><img src="https://wcv.org/wp-content/uploads/Common-Areas-1-1024x683.jpg" alt="Worthington Christian Village community profile" /></a>
                 </div>
                 <div>
                   <div class="meta-top">
@@ -484,18 +460,19 @@
                       <div class="micro">Columbus, Ohio</div>
                     </div>
                     <div class="score-badge">
-                      <div class="label">Medicare Overall Rating</div>
+                      <div class="label">Medicare Rating</div>
                       <div class="value">5 / 5</div>
                     </div>
                   </div>
                   <ul class="care-tags"><li>Independent Living</li><li>Assisted Living</li><li>Skilled Nursing</li></ul>
-                  <p>Worthington Christian Village is part of the current Compass Place comparison set for the Columbus (West), Ohio.</p>
+                  <p>Worthington Christian Village is part of the current Compass Place comparison set for the Columbus (West), Ohio area.</p>
                   <div class="micro">This is Medicare’s published overall nursing home rating. It applies to the skilled nursing portion of the community when that level of care is offered.</div>
                   <div class="entry-links">
                     <a class="primary-link" href="https://compassplace.com/community/worthington-christian-village-columbus-oh/">View community page</a>
                   </div>
                 </div>
               </article>
+
             </div>
           </div>
 
@@ -505,7 +482,7 @@
 
               <article class="community-card">
                 <div class="thumb">
-                  <a href="https://compassplace.com/community/bickford-of-worthington-worthington-oh/"><img src="https://compassplace.com/logo-social.png" alt="Bickford of Worthington community profile" /></a>
+                  <a href="https://compassplace.com/community/bickford-of-worthington-worthington-oh/"><img src="https://bickfordseniorliving.com/wp-content/themes/bickford-build-3_2_0_6/library/img/Bickford-Cupola.jpg" alt="Bickford of Worthington community profile" /></a>
                 </div>
                 <div>
                   <div class="meta-top">
@@ -519,7 +496,7 @@
                     </div>
                   </div>
                   <ul class="care-tags"><li>Assisted Living</li><li>Memory Care</li></ul>
-                  <p>Bickford of Worthington is part of the current Compass Place comparison set for the Columbus (West), Ohio.</p>
+                  <p>Bickford of Worthington is part of the current Compass Place comparison set for the Columbus (West), Ohio area.</p>
                   <div class="micro">Compass Place derives this proprietary score from official inspection history and resolution patterns, translated into a 5-point scale for easier comparison.</div>
                   <div class="entry-links">
                     <a class="primary-link" href="https://compassplace.com/community/bickford-of-worthington-worthington-oh/">View community page</a>
@@ -529,7 +506,7 @@
 
               <article class="community-card">
                 <div class="thumb">
-                  <a href="https://compassplace.com/community/melbourne-village-worthington-oh/"><img src="https://compassplace.com/logo-social.png" alt="Melbourne Village community profile" /></a>
+                  <a href="https://compassplace.com/community/melbourne-village-worthington-oh/"><img src="https://www.worthingtonmelbournevillage.com/wp-content/uploads/2017/04/slide0.jpg" alt="Melbourne Village community profile" /></a>
                 </div>
                 <div>
                   <div class="meta-top">
@@ -539,17 +516,18 @@
                     </div>
                     <div class="score-badge">
                       <div class="label">Community Profile</div>
-                      <div class="value">nan</div>
+                      <div class="value">N/A</div>
                     </div>
                   </div>
                   <ul class="care-tags"><li>Independent Living</li></ul>
-                  <p>Melbourne Village is part of the current Compass Place comparison set for the Columbus (West), Ohio.</p>
+                  <p>Melbourne Village is part of the current Compass Place comparison set for the Columbus (West), Ohio area.</p>
                   <div class="micro">A public comparison score is not currently displayed for this community.</div>
                   <div class="entry-links">
                     <a class="primary-link" href="https://compassplace.com/community/melbourne-village-worthington-oh/">View community page</a>
                   </div>
                 </div>
               </article>
+
             </div>
           </div>
 
@@ -559,7 +537,7 @@
 
               <article class="community-card">
                 <div class="thumb">
-                  <a href="https://compassplace.com/community/the-bristol-senior-living-at-worthington-hills-worthington-hills-oh/"><img src="https://compassplace.com/logo-social.png" alt="The Bristol Senior Living at Worthington Hills community profile" /></a>
+                  <a href="https://compassplace.com/community/the-bristol-senior-living-at-worthington-hills-worthington-hills-oh/"><img src="https://continentalseniorcommunities.com/system/files/styles/3_4/private/2022-07/DSC-22884.jpg?h=8b88a370&amp;itok=8Eo4pPg4" alt="The Bristol Senior Living at Worthington Hills community profile" /></a>
                 </div>
                 <div>
                   <div class="meta-top">
@@ -573,18 +551,20 @@
                     </div>
                   </div>
                   <ul class="care-tags"><li>Independent Living</li><li>Assisted Living</li></ul>
-                  <p>The Bristol Senior Living at Worthington Hills is part of the current Compass Place comparison set for the Columbus (West), Ohio.</p>
+                  <p>The Bristol Senior Living at Worthington Hills is part of the current Compass Place comparison set for the Columbus (West), Ohio area.</p>
                   <div class="micro">Compass Place derives this proprietary score from official inspection history and resolution patterns, translated into a 5-point scale for easier comparison.</div>
                   <div class="entry-links">
                     <a class="primary-link" href="https://compassplace.com/community/the-bristol-senior-living-at-worthington-hills-worthington-hills-oh/">View community page</a>
                   </div>
                 </div>
               </article>
+
             </div>
           </div>
 
       </div>
     </section>
+
     <section class="section">
       <div class="container">
         <div class="cta-block">
