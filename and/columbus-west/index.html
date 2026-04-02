@@ -551,6 +551,24 @@
       }
     }
   </style>
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '964118589642962');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=964118589642962&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
 </head>
 <body>
   <div id="cp-header"></div>
@@ -563,8 +581,8 @@
           <h1>Explore senior living privately in West Columbus</h1>
           <p>Compass Place helps families learn, compare options, and move at their own pace before they are ready to talk with sales teams at local senior living communities.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="https://compassplace.com/get/">Get the App</a>
-            <a class="btn btn-secondary" href="#trail-guide-form">Talk to a Trail Guide</a>
+            <a class="btn btn-primary" href="https://compassplace.com/get/" onclick="fbq('track', 'Lead');">Get the App</a>
+            <a class="btn btn-secondary" href="#trail-guide-form" onclick="fbq('track', 'Contact');">Talk to a Trail Guide</a>
           </div>
           <p class="support-note">Free to explore. Local help is available if and when you want it.</p>
         </div>
@@ -754,8 +772,8 @@
           <h2 class="section-title">Start privately. Move at your own pace.</h2>
           <p>Whether you are just beginning or already feeling pressure to make a decision, Compass Place offers a calmer way to explore senior living in West Columbus and nearby areas.</p>
           <div class="cta-actions">
-            <a class="btn btn-primary" href="https://compassplace.com/get/">Get the App</a>
-            <a class="btn btn-secondary" href="#trail-guide-form">Talk to a Trail Guide</a>
+            <a class="btn btn-primary" href="https://compassplace.com/get/" onclick="fbq('track', 'Lead');">Get the App</a>
+            <a class="btn btn-secondary" href="#trail-guide-form" onclick="fbq('track', 'Contact');">Talk to a Trail Guide</a>
           </div>
         </div>
       </div>
