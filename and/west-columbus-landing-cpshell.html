@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Explore Senior Living Privately in West Columbus | Compass Place</title>
+  <meta name="description" content="Compass Place helps families in West Columbus, Dublin, and Hilliard explore senior living privately, compare options, and connect with a local Trail Guide when they are ready." />
+  <style>
+    :root {
+      --navy: #1b3868;
+      --navy-dark: #142b50;
+      --blue-soft: #eef4fb;
+      --gold: #d6b25e;
+      --text: #1f2937;
+      --text-soft: #5b6472;
+      --line: #d9e3f0;
+      --white: #ffffff;
+      --shadow: 0 18px 50px rgba(17, 39, 74, 0.10);
+      --radius: 22px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: #f8fbff;
+      line-height: 1.55;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(217, 227, 240, 0.9);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      min-height: 76px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: 0.01em;
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: linear-gradient(180deg, #2c5aa0 0%, #1b3868 100%);
+      color: var(--white);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 19px;
+      font-weight: 700;
+      box-shadow: 0 10px 24px rgba(27, 56, 104, 0.22);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 50px;
+      padding: 0 22px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      font-size: 15px;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: var(--navy);
+      color: var(--white);
+      box-shadow: 0 12px 28px rgba(27, 56, 104, 0.20);
+    }
+
+    .btn-primary:hover {
+      background: var(--navy-dark);
+    }
+
+    .btn-secondary {
+      background: var(--white);
+      color: var(--navy);
+      border-color: var(--line);
+    }
+
+    .btn-secondary:hover {
+      border-color: #b8cadf;
+      box-shadow: 0 10px 22px rgba(27, 56, 104, 0.08);
+    }
+
+    .hero {
+      padding: 54px 0 38px;
+    }
+
+    .hero-wrap {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .hero-copy,
+    .hero-card,
+    .section-card,
+    .form-card,
+    .cta-panel {
+      background: var(--white);
+      border: 1px solid rgba(217, 227, 240, 0.85);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-copy {
+      padding: 44px;
+      background: linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 18px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: var(--blue-soft);
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0 0 18px;
+      color: var(--navy);
+      font-size: clamp(2.2rem, 4vw, 3.7rem);
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-copy p {
+      margin: 0;
+      font-size: 1.08rem;
+      color: var(--text-soft);
+      max-width: 700px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin: 28px 0 12px;
+    }
+
+    .support-note {
+      font-size: 0.96rem;
+      color: var(--text-soft);
+    }
+
+    .hero-card {
+      padding: 32px;
+      background: linear-gradient(180deg, #1b3868 0%, #23457e 100%);
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      right: -50px;
+      bottom: -60px;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .hero-card h2 {
+      margin: 0 0 16px;
+      font-size: 1.55rem;
+      line-height: 1.2;
+    }
+
+    .hero-card p {
+      margin: 0 0 22px;
+      color: rgba(255,255,255,0.87);
+    }
+
+    .hero-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 12px;
+    }
+
+    .hero-list li {
+      padding-left: 30px;
+      position: relative;
+      color: rgba(255,255,255,0.95);
+    }
+
+    .hero-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-weight: 700;
+      color: #dbe7ff;
+    }
+
+    .reassurance {
+      padding: 10px 0 8px;
+    }
+
+    .reassurance .section-card {
+      padding: 28px 32px;
+      text-align: center;
+      font-size: 1.12rem;
+    }
+
+    .reassurance strong {
+      color: var(--navy);
+    }
+
+    section {
+      padding: 18px 0;
+    }
+
+    .section-card {
+      padding: 34px;
+    }
+
+    .section-header {
+      max-width: 760px;
+      margin-bottom: 26px;
+    }
+
+    h2.section-title {
+      margin: 0 0 10px;
+      color: var(--navy);
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      line-height: 1.15;
+    }
+
+    .section-subtitle {
+      margin: 0;
+      color: var(--text-soft);
+      font-size: 1.03rem;
+    }
+
+    .steps,
+    .benefits,
+    .areas {
+      display: grid;
+      gap: 18px;
+    }
+
+    .steps {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .benefits {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .areas {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .card {
+      background: #f8fbff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 24px;
+      height: 100%;
+    }
+
+    .step-number {
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      background: var(--navy);
+      color: var(--white);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    h3 {
+      margin: 0 0 10px;
+      color: var(--navy);
+      font-size: 1.15rem;
+      line-height: 1.25;
+    }
+
+    .card p,
+    .trail-guide-copy p,
+    .cta-panel p,
+    .local-links-note {
+      margin: 0;
+      color: var(--text-soft);
+    }
+
+    .area-link {
+      display: block;
+      color: var(--navy);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .trail-guide-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 22px;
+      align-items: start;
+    }
+
+    .trail-guide-copy {
+      padding: 34px;
+      background: linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
+      border: 1px solid rgba(217, 227, 240, 0.85);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .trail-guide-copy p + p {
+      margin-top: 14px;
+    }
+
+    .form-card {
+      padding: 30px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid #cfdbe8;
+      border-radius: 14px;
+      min-height: 52px;
+      padding: 14px 16px;
+      font: inherit;
+      color: var(--text);
+      background: #fbfdff;
+      transition: border-color 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: #8cb0d9;
+      box-shadow: 0 0 0 4px rgba(140, 176, 217, 0.18);
+    }
+
+    .form-note {
+      margin-top: 14px;
+      font-size: 0.92rem;
+      color: var(--text-soft);
+    }
+
+    .submit-row {
+      margin-top: 18px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .cta-panel {
+      padding: 42px 34px;
+      text-align: center;
+      background: linear-gradient(180deg, #1b3868 0%, #23457e 100%);
+      color: var(--white);
+    }
+
+    .cta-panel h2,
+    .cta-panel p {
+      color: var(--white);
+    }
+
+    .cta-panel p {
+      max-width: 760px;
+      margin: 0 auto;
+      opacity: 0.9;
+    }
+
+    .cta-actions {
+      margin-top: 24px;
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .cta-panel .btn-secondary {
+      background: rgba(255,255,255,0.12);
+      color: var(--white);
+      border-color: rgba(255,255,255,0.28);
+    }
+
+    .cta-panel .btn-secondary:hover {
+      background: rgba(255,255,255,0.18);
+    }
+
+    .tagline {
+      padding: 28px 0 56px;
+      text-align: center;
+      color: var(--navy);
+      font-size: clamp(1.2rem, 2vw, 1.55rem);
+      font-weight: 700;
+    }
+
+    .footer {
+      padding: 0 0 36px;
+      text-align: center;
+      color: var(--text-soft);
+      font-size: 0.93rem;
+    }
+
+    @media (max-width: 980px) {
+      .hero-wrap,
+      .trail-guide-grid,
+      .steps,
+      .benefits,
+      .areas {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy,
+      .hero-card,
+      .section-card,
+      .trail-guide-copy,
+      .form-card,
+      .cta-panel {
+        padding: 28px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav {
+        padding: 10px 0;
+        align-items: flex-start;
+      }
+
+      .nav,
+      .nav-actions,
+      .hero-actions,
+      .cta-actions,
+      .submit-row,
+      .form-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .nav-actions {
+        width: 100%;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .hero {
+        padding-top: 30px;
+      }
+
+      h1 {
+        font-size: 2.25rem;
+      }
+
+      .reassurance .section-card,
+      .cta-panel,
+      .tagline {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="cp-header"></div>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-wrap">
+        <div class="hero-copy">
+          <span class="eyebrow">West Columbus · Dublin · Hilliard</span>
+          <h1>Explore senior living privately in West Columbus</h1>
+          <p>Compass Place helps families learn, compare options, and move at their own pace before they are ready to talk with sales teams at local senior living communities.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://compassplace.com/get/">Get the App</a>
+            <a class="btn btn-secondary" href="#trail-guide-form">Talk to a Trail Guide</a>
+          </div>
+          <p class="support-note">Free to explore. Local help is available if and when you want it.</p>
+        </div>
+
+        <aside class="hero-card" aria-label="Why Compass Place feels different">
+          <h2>A calmer place to start</h2>
+          <p>Many families want space to understand the options before they start fielding outreach from community sales teams.</p>
+          <ul class="hero-list">
+            <li>Compare options more privately</li>
+            <li>Focus on West Columbus, Dublin, and Hilliard</li>
+            <li>Connect with a local Trail Guide only when you want help</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="reassurance">
+      <div class="container">
+        <div class="section-card">
+          <strong>You do not have to start by talking to community sales teams before you are ready.</strong><br />
+          Compass Place gives families a simpler way to learn, compare options, and decide what to do next.
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-card">
+          <div class="section-header">
+            <h2 class="section-title">A simpler way to start</h2>
+            <p class="section-subtitle">This page is built for families who are just beginning, still sorting through questions, or trying to narrow options without added pressure.</p>
+          </div>
+
+          <div class="steps">
+            <div class="card">
+              <div class="step-number">1</div>
+              <h3>Share what matters most</h3>
+              <p>Use the app to think through care needs, location, preferences, and the factors that matter most to your family.</p>
+            </div>
+            <div class="card">
+              <div class="step-number">2</div>
+              <h3>Compare better-fit options</h3>
+              <p>Explore communities in West Columbus, Dublin, and Hilliard and focus your attention on the options that seem most relevant.</p>
+            </div>
+            <div class="card">
+              <div class="step-number">3</div>
+              <h3>Get help only if you want it</h3>
+              <p>Browse on your own, or ask a local Trail Guide for help when you want a more personal conversation about next steps.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-card">
+          <div class="section-header">
+            <h2 class="section-title">Why families choose Compass Place</h2>
+            <p class="section-subtitle">The goal is not to create more noise. It is to make a hard decision feel more manageable.</p>
+          </div>
+
+          <div class="benefits">
+            <div class="card">
+              <h3>Private by design</h3>
+              <p>Start learning before you are ready to talk with sales representatives at individual communities.</p>
+            </div>
+            <div class="card">
+              <h3>Built for real decisions</h3>
+              <p>Compare options based on what actually matters to your family instead of jumping into outreach too early.</p>
+            </div>
+            <div class="card">
+              <h3>Local support when needed</h3>
+              <p>A Trail Guide can help you narrow options and think through next steps when the time is right.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-card">
+          <div class="section-header">
+            <h2 class="section-title">Focused on West Columbus and nearby communities</h2>
+            <p class="section-subtitle">We currently support families exploring senior living options in these nearby areas.</p>
+          </div>
+
+          <div class="areas">
+            <div class="card">
+              <a class="area-link" href="https://compassplace.com/senior-living/ohio/columbus-west-ohio/">West Columbus</a>
+              <p>Browse local information and start narrowing options in the west side of Columbus.</p>
+            </div>
+            <div class="card">
+              <a class="area-link" href="https://compassplace.com/senior-living/ohio/dublin-ohio-area/">Dublin</a>
+              <p>See communities and area details for families considering senior living in Dublin.</p>
+            </div>
+            <div class="card">
+              <a class="area-link" href="https://compassplace.com/senior-living/ohio/hilliard-ohio-area/">Hilliard</a>
+              <p>Explore nearby options for families looking in Hilliard and the surrounding area.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="trail-guide-form">
+      <div class="container trail-guide-grid">
+        <div class="trail-guide-copy">
+          <span class="eyebrow">Local support</span>
+          <h2 class="section-title">Want a little help from a real person?</h2>
+          <p>Some families prefer to explore on their own. Others want help narrowing options, thinking through questions, or deciding what to do next.</p>
+          <p>If you would like help from a local Trail Guide serving West Columbus, Dublin, or Hilliard, fill out this short form. Your message will go directly to Compass Place so we can personally review it and follow up.</p>
+          <p class="local-links-note">This is for families who want guidance, not pressure.</p>
+        </div>
+
+        <div class="form-card">
+          <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+            <input type="hidden" name="market" value="West Columbus" />
+            <input type="hidden" name="source_page" value="west-columbus-landing" />
+            <input type="hidden" name="request_type" value="Trail Guide" />
+            <input type="hidden" name="service_area" value="West Columbus, Dublin, Hilliard" />
+
+            <div class="form-grid">
+              <div class="field">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" required />
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" required />
+              </div>
+              <div class="field">
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" type="tel" />
+              </div>
+              <div class="field">
+                <label for="for-whom">Who are you looking for care for?</label>
+                <select id="for-whom" name="looking_for">
+                  <option value="">Select one</option>
+                  <option>My parent</option>
+                  <option>My spouse</option>
+                  <option>Another family member</option>
+                  <option>Myself</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="area">What area are you considering?</label>
+                <select id="area" name="area_considering">
+                  <option value="">Select one</option>
+                  <option>West Columbus</option>
+                  <option>Dublin</option>
+                  <option>Hilliard</option>
+                  <option>Still deciding</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="help-needed">What kind of help would be useful right now?</label>
+                <select id="help-needed" name="help_needed">
+                  <option value="">Select one</option>
+                  <option>Understanding the options</option>
+                  <option>Narrowing communities</option>
+                  <option>Talking through next steps</option>
+                  <option>I am not sure yet</option>
+                </select>
+              </div>
+              <div class="field full">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Tell us a little about what you are looking for."></textarea>
+              </div>
+            </div>
+
+            <div class="submit-row">
+              <button class="btn btn-primary" type="submit">Connect with a Trail Guide</button>
+            </div>
+            <p class="form-note">For now, submissions go to Compass Place directly so we can personally review them before following up.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="cta-panel">
+          <h2 class="section-title">Start privately. Move at your own pace.</h2>
+          <p>Whether you are just beginning or already feeling pressure to make a decision, Compass Place offers a calmer way to explore senior living in West Columbus and nearby areas.</p>
+          <div class="cta-actions">
+            <a class="btn btn-primary" href="https://compassplace.com/get/">Get the App</a>
+            <a class="btn btn-secondary" href="#trail-guide-form">Talk to a Trail Guide</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="tagline">Explore senior living privately, at your own pace.</div>
+    </div>
+  </main>
+
+  <div id="cp-footer"></div>
+  <script src="/cp-shell.js"></script>
+</body>
+</html>
