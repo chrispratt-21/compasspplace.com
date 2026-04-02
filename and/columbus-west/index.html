@@ -6,6 +6,25 @@
   <title>Explore Senior Living Privately in West Columbus | Compass Place</title>
   <meta name="description" content="Compass Place helps families in West Columbus, Dublin, and Hilliard explore senior living privately, compare options, and connect with a local Trail Guide when they are ready." />
   <meta name="robots" content="noindex, nofollow" />
+
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '964118589642962');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=964118589642962&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
   <style>
     :root {
       --navy: #1b3868;
@@ -551,24 +570,6 @@
       }
     }
   </style>
-  <!-- Meta Pixel Code -->
-  <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '964118589642962');
-  fbq('track', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=964118589642962&ev=PageView&noscript=1"
-  /></noscript>
-  <!-- End Meta Pixel Code -->
-
 </head>
 <body>
   <div id="cp-header"></div>
@@ -701,7 +702,7 @@
 
         <div class="form-card">
           <form class="contact-form" action="https://formspree.io/f/xqedgwkw" method="POST">
-            <input type="hidden" name="_subject" value="New West Columbus Trail Guide request from compassplace.com" />
+            <input type="hidden" name="_subject" id="form-subject" value="New West Columbus Trail Guide request from compassplace.com" />
             <input type="hidden" name="market" value="West Columbus" />
             <input type="hidden" name="source_page" value="west-columbus-landing" />
             <input type="hidden" name="request_type" value="Trail Guide" />
@@ -794,6 +795,19 @@
 
       form.addEventListener('submit', function (e) {
         e.preventDefault();
+
+        var subjectField = document.getElementById('form-subject');
+        if (subjectField) {
+          var now = new Date();
+          var stamp = now.getFullYear() + '-' +
+            String(now.getMonth() + 1).padStart(2, '0') + '-' +
+            String(now.getDate()).padStart(2, '0') + ' ' +
+            String(now.getHours()).padStart(2, '0') + ':' +
+            String(now.getMinutes()).padStart(2, '0') + ':' +
+            String(now.getSeconds()).padStart(2, '0');
+          subjectField.value = 'West Columbus Trail Guide request - ' + stamp;
+        }
+
         var button = form.querySelector('button[type="submit"]');
         var originalText = button ? button.textContent : '';
         if (button) {
