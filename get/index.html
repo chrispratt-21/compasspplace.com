@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -23,29 +24,108 @@ fbq('track', 'PageView');
 fbq('track', 'ViewContent');
 </script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=964118589642962&ev=PageView&noscript=1"/></noscript>
+
 <script src="/cp-shell.js"></script>
 <style>
 :root{--bg:#FAFAF7;--primary:#2B5F4E;--primary-light:#3A7D66;--accent:#C4945A;--accent-light:#F5EDE2;--text:#2C2C2C;--text-secondary:#6B6B6B;--border:#E5E2DC;--card:#fff;--font-display:'DM Serif Display',Georgia,serif;--font-body:'DM Sans',-apple-system,sans-serif;--shadow:0 18px 40px rgba(44,44,44,.08);--radius:24px;--max:1180px}
-*,*:before,*:after{box-sizing:border-box;margin:0;padding:0} body{font-family:var(--font-body);color:var(--text);background:var(--bg);line-height:1.65;font-size:16px;-webkit-font-smoothing:antialiased}
-img{display:block;max-width:100%} a{color:inherit;text-decoration:none}.container{width:min(calc(100% - 32px),var(--max));margin:0 auto}
+*,*:before,*:after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-body);color:var(--text);background:var(--bg);line-height:1.65;font-size:16px;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%} a{color:inherit;text-decoration:none}
+.container{width:min(calc(100% - 32px),var(--max));margin:0 auto}
+
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 22px;border-radius:999px;border:1px solid transparent;font-weight:700;font-size:15px;transition:.18s;cursor:pointer;text-align:center}
-.btn:hover{transform:translateY(-1px)} .btn-primary{background:var(--primary);color:#fff;box-shadow:0 14px 30px rgba(43,95,78,.18)} .btn-primary:hover{background:var(--primary-light)} .btn-secondary{background:#fff;color:var(--primary);border-color:var(--border)}
-.page-section{padding:24px 0}.hero{padding:72px 0 28px}.hero-wrap{display:grid;grid-template-columns:1fr;gap:28px;align-items:center}.hero-copy,.section-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow)}
-.hero-copy{padding:42px}.hero-copy h1{font-family:var(--font-display);font-size:clamp(2rem,4.5vw,3.3rem);line-height:1.1;color:var(--primary);margin-bottom:18px}.hero-copy p{color:var(--text-secondary);font-size:1.08rem;margin-bottom:14px}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:var(--primary);color:#fff;box-shadow:0 14px 30px rgba(43,95,78,.18)}
+.btn-primary:hover{background:var(--primary-light)}
+.btn-secondary{background:#fff;color:var(--primary);border-color:var(--border)}
+
+.page-section{padding:24px 0}
+.hero{padding:72px 0 28px}
+.hero-wrap{display:grid;grid-template-columns:1fr;gap:28px;align-items:center}
+.hero-copy,.section-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow)}
+.hero-copy{padding:42px}
+.hero-copy h1{font-family:var(--font-display);font-size:clamp(2rem,4.5vw,3.3rem);line-height:1.1;color:var(--primary);margin-bottom:18px}
+.hero-copy p{color:var(--text-secondary);font-size:1.08rem;margin-bottom:14px}
 .launch-note{display:inline-block;background:var(--accent-light);color:var(--accent);padding:8px 16px;border-radius:999px;font-size:.85rem;font-weight:700;margin:8px 0 26px}
-.store-buttons{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:18px}.store-btn{display:inline-flex;align-items:center;gap:10px;background:var(--text);color:#fff;padding:14px 26px;border-radius:12px;font-weight:600;font-size:.95rem;transition:.2s}.store-btn:hover{background:#444;transform:translateY(-1px)} .store-btn svg{width:24px;height:24px;flex-shrink:0}.store-btn small{font-size:.72rem;font-weight:400;display:block;opacity:.8}
-.get-note{font-size:.9rem;color:var(--text-secondary)} .section-card{padding:34px}.section-header{max-width:780px;margin-bottom:24px}.section-title{font-family:var(--font-display);font-size:clamp(1.8rem,3vw,2.6rem);line-height:1.15;color:var(--primary);margin-bottom:10px}.section-subtitle{color:var(--text-secondary);font-size:1.02rem}
-.preview-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.preview-card,.how-card,.trust-card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:18px;height:100%}.preview-shot{border:1px solid var(--border);border-radius:16px;overflow:hidden;margin-bottom:16px;background:#fff}
-.preview-card h3,.how-card h3,.trust-card h3{font-size:1.12rem;margin-bottom:8px}.preview-card p,.how-card p,.trust-card p{color:var(--text-secondary)}
-.how-grid,.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.how-step{width:40px;height:40px;border-radius:999px;background:var(--primary);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-weight:700;margin-bottom:14px}
+.store-buttons{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:18px}
+.store-btn{display:inline-flex;align-items:center;gap:10px;background:var(--text);color:#fff;padding:14px 26px;border-radius:12px;font-weight:600;font-size:.95rem;transition:.2s}
+.store-btn:hover{background:#444;transform:translateY(-1px)}
+.store-btn svg{width:24px;height:24px;flex-shrink:0}
+.store-btn small{font-size:.72rem;font-weight:400;display:block;opacity:.8}
+.get-note{font-size:.9rem;color:var(--text-secondary)}
+
+.section-card{padding:34px}
+.section-header{max-width:780px;margin-bottom:24px}
+.section-title{font-family:var(--font-display);font-size:clamp(1.8rem,3vw,2.6rem);line-height:1.15;color:var(--primary);margin-bottom:10px}
+.section-subtitle{color:var(--text-secondary);font-size:1.02rem}
+
+.thumb-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:8px}
+.thumb-card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:14px;cursor:pointer;transition:transform .16s ease,box-shadow .16s ease,border-color .16s ease}
+.thumb-card:hover{transform:translateY(-2px);box-shadow:0 12px 24px rgba(43,95,78,.08);border-color:#d6c7b8}
+.thumb-shot{border:1px solid var(--border);border-radius:14px;overflow:hidden;background:#fff;margin-bottom:12px}
+.thumb-shot img{width:100%;aspect-ratio:9/16;object-fit:cover;object-position:top center}
+.thumb-title{font-weight:700;color:var(--primary);margin-bottom:6px;font-size:.98rem;line-height:1.25}
+.thumb-caption{color:var(--text-secondary);font-size:.92rem;line-height:1.4}
+
+.how-grid,.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.how-card,.trust-card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:24px;height:100%}
+.how-step{width:40px;height:40px;border-radius:999px;background:var(--primary);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-weight:700;margin-bottom:14px}
+.how-card h3,.trust-card h3{font-size:1.12rem;margin-bottom:8px}
+.how-card p,.trust-card p{color:var(--text-secondary)}
+
 .cta-panel{background:linear-gradient(180deg,#2B5F4E 0%,#265547 100%);border-radius:24px;padding:40px 32px;color:#fff;text-align:center;box-shadow:var(--shadow)}
-.cta-panel h2{font-family:var(--font-display);font-size:clamp(1.8rem,3vw,2.6rem);margin-bottom:12px}.cta-panel p{max-width:760px;margin:0 auto 24px;opacity:.95}.cta-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}.cta-panel .btn-secondary{background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.25)}
-@media(max-width:980px){.hero-wrap,.preview-grid,.how-grid,.trust-grid{grid-template-columns:1fr}.hero-copy,.section-card{padding:28px}}
-@media(max-width:720px){.store-buttons,.cta-actions{flex-direction:column;align-items:stretch}.store-btn,.btn{width:100%}.hero{padding-top:34px}}
+.cta-panel h2{font-family:var(--font-display);font-size:clamp(1.8rem,3vw,2.6rem);margin-bottom:12px}
+.cta-panel p{max-width:760px;margin:0 auto 24px;opacity:.95}
+.cta-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.cta-panel .btn-secondary{background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.25)}
+
+.lightbox{position:fixed;inset:0;background:rgba(8,18,36,.78);display:none;align-items:center;justify-content:center;padding:24px;z-index:9999}
+.lightbox.active{display:flex}
+.lightbox-dialog{width:min(980px,100%);background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.25);position:relative}
+.lightbox-close{position:absolute;top:14px;right:14px;width:44px;height:44px;border-radius:999px;border:1px solid var(--border);background:rgba(255,255,255,.95);color:var(--primary);font-size:28px;line-height:1;cursor:pointer;z-index:3}
+.lightbox-body{display:grid;grid-template-columns:minmax(0,1fr) 320px;min-height:560px}
+.lightbox-media{background:#f5f6f2;display:flex;align-items:center;justify-content:center;padding:34px;position:relative;overflow:visible}
+.lightbox-media img{max-height:72vh;width:auto;max-width:100%;border-radius:18px;box-shadow:0 16px 36px rgba(43,95,78,.14);border:1px solid var(--border);background:#fff}
+.lightbox-panel{padding:34px 28px;border-left:1px solid var(--border);background:#fff;display:flex;flex-direction:column;justify-content:center}
+.lightbox-panel h3{font-size:1.35rem;margin-bottom:12px;color:var(--primary)}
+.lightbox-panel p{color:var(--text-secondary);font-size:1rem;line-height:1.55}
+.lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);width:52px;height:52px;border-radius:999px;border:1px solid rgba(229,226,220,.95);background:rgba(255,255,255,.96);color:var(--primary);font-size:28px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;box-shadow:0 12px 24px rgba(44,44,44,.12);z-index:2}
+.lightbox-prev{left:18px}
+.lightbox-next{right:18px}
+.lightbox-mobile-caption{display:none}
+
+@media(max-width:1100px){.thumb-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:980px){
+  .hero-wrap,.how-grid,.trust-grid{grid-template-columns:1fr}
+  .hero-copy,.section-card{padding:28px}
+  .lightbox-body{grid-template-columns:1fr}
+  .lightbox-panel{border-left:0;border-top:1px solid var(--border)}
+}
+@media(max-width:720px){
+  .store-buttons,.cta-actions{flex-direction:column;align-items:stretch}
+  .store-btn,.btn{width:100%}
+  .hero{padding-top:34px}
+  .thumb-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+  .thumb-card{padding:10px;border-radius:14px}
+  .thumb-shot{margin-bottom:8px;border-radius:10px}
+  .thumb-title{font-size:.84rem;margin-bottom:4px}
+  .thumb-caption{font-size:.76rem;line-height:1.3}
+  .lightbox{padding:10px;align-items:flex-start;overflow-y:auto}
+  .lightbox-dialog{margin:12px auto;width:100%}
+  .lightbox-body{display:block;min-height:auto}
+  .lightbox-mobile-caption{display:block;padding:18px 56px 8px 16px;color:var(--primary);font-weight:700;font-size:1rem;line-height:1.35;background:#fff}
+  .lightbox-media{padding:12px 12px 18px;min-height:auto}
+  .lightbox-panel{display:none}
+  .lightbox-close{top:8px;right:8px;width:42px;height:42px;font-size:26px}
+  .lightbox-prev{left:8px;top:50%;transform:translateY(-50%)}
+  .lightbox-next{right:8px;top:50%;transform:translateY(-50%)}
+  .lightbox-nav{width:46px;height:46px;font-size:24px}
+}
 </style>
 </head>
 <body>
 <div id="cp-header"></div>
+
 <main>
 <section class="hero"><div class="container hero-wrap">
 <div class="hero-copy">
@@ -61,13 +141,38 @@ img{display:block;max-width:100%} a{color:inherit;text-decoration:none}.containe
 </div>
 </div></section>
 
-<section class="page-section"><div class="container"><div class="section-card"><div class="section-header"><h2 class="section-title">See what you will get inside Compass Place</h2><p class="section-subtitle">If you are unsure whether the app is worth downloading, here is a quick look at how it helps families narrow options and move forward with more clarity.</p></div>
-<div class="preview-grid">
-<div class="preview-card"><div class="preview-shot"><img src="/images/app-comparison.png" alt="Comparison screen"></div><h3>Compare top matches side by side</h3><p>See how communities stack up on care fit, distance, availability, and what matters most to your family.</p></div>
-<div class="preview-card"><div class="preview-shot"><img src="/images/app-ranked-places.png" alt="Ranked places screen"></div><h3>Browse ranked places that fit your situation</h3><p>Focus on the communities that best match your family’s needs instead of sorting through a generic list.</p></div>
-<div class="preview-card"><div class="preview-shot"><img src="/images/app-trail-guide-opinions.png" alt="Trail Guide opinions screen"></div><h3>See local Trail Guide insight</h3><p>Get expert perspective that helps you look beyond the brochure and know what to look for on tours.</p></div>
-<div class="preview-card"><div class="preview-shot"><img src="/images/app-schedule-tour.png" alt="Schedule a tour screen"></div><h3>Request tours when you are ready</h3><p>Take the next step without losing track of your options or feeling pushed before you are ready.</p></div>
-</div></div></div></section>
+<section class="page-section"><div class="container"><div class="section-card">
+<div class="section-header">
+<h2 class="section-title">See what you will get inside Compass Place</h2>
+<p class="section-subtitle">Tap any preview to enlarge it and see how the app helps families narrow options and move forward with more clarity.</p>
+</div>
+
+<div class="thumb-grid">
+<button class="thumb-card" type="button" data-index="0">
+<div class="thumb-shot"><img src="/images/app-comparison.png" alt="Comparison screen"></div>
+<div class="thumb-title">Compare top matches side by side</div>
+<div class="thumb-caption">See how communities stack up on care fit, distance, availability, and what matters most to your family.</div>
+</button>
+
+<button class="thumb-card" type="button" data-index="1">
+<div class="thumb-shot"><img src="/images/app-ranked-places.png" alt="Ranked places screen"></div>
+<div class="thumb-title">Browse ranked places that fit your situation</div>
+<div class="thumb-caption">Focus on the communities that best match your family’s needs instead of sorting through a generic list.</div>
+</button>
+
+<button class="thumb-card" type="button" data-index="2">
+<div class="thumb-shot"><img src="/images/app-trail-guide-opinions.png" alt="Trail Guide opinions screen"></div>
+<div class="thumb-title">See local Trail Guide insight</div>
+<div class="thumb-caption">Get expert perspective that helps you look beyond the brochure and know what to look for on tours.</div>
+</button>
+
+<button class="thumb-card" type="button" data-index="3">
+<div class="thumb-shot"><img src="/images/app-schedule-tour.png" alt="Schedule a tour screen"></div>
+<div class="thumb-title">Request tours when you are ready</div>
+<div class="thumb-caption">Take the next step without losing track of your options or feeling pushed before you are ready.</div>
+</button>
+</div>
+</div></div></section>
 
 <section class="page-section"><div class="container"><div class="section-card"><div class="section-header"><h2 class="section-title">How families use the app</h2><p class="section-subtitle">Compass Place is designed to help people move from uncertainty to a shorter, more manageable list of options.</p></div>
 <div class="how-grid"><div class="how-card"><div class="how-step">1</div><h3>Describe the situation</h3><p>Tell the app about the person you are helping so Compass Place can focus on communities that fit better.</p></div><div class="how-card"><div class="how-step">2</div><h3>Review ranked matches</h3><p>Browse communities, compare the strongest options side by side, and get a clearer picture of tradeoffs.</p></div><div class="how-card"><div class="how-step">3</div><h3>Move forward with confidence</h3><p>Use Trail Guide insight and tour requests when you are ready to take the next step.</p></div></div>
@@ -79,8 +184,86 @@ img{display:block;max-width:100%} a{color:inherit;text-decoration:none}.containe
 
 <section class="page-section"><div class="container"><div class="cta-panel"><h2>Download Compass Place and explore privately</h2><p>See what fits, compare top options, and move forward when you are ready.</p><div class="cta-actions"><a href="https://apps.apple.com/us/app/compass-place/id6759469544" class="btn btn-primary" id="apple-store-btn-bottom" rel="noopener" onclick="fbq('track','Lead');">Download on the App Store</a><a href="https://play.google.com/store/apps/details?id=com.compassplace.app&pcampaignid=web_share" class="btn btn-secondary" id="android-store-btn-bottom" rel="noopener" onclick="fbq('track','Lead');">Get it on Google Play</a></div></div></div></section>
 </main>
+
+<div class="lightbox" id="preview-lightbox" aria-hidden="true">
+  <div class="lightbox-dialog" role="dialog" aria-modal="true" aria-labelledby="lightbox-title">
+    <button class="lightbox-close" type="button" aria-label="Close preview">×</button>
+    <div class="lightbox-mobile-caption" id="lightbox-mobile-caption"></div>
+    <div class="lightbox-body">
+      <div class="lightbox-media">
+        <button class="lightbox-nav lightbox-prev" type="button" aria-label="Previous image">‹</button>
+        <img id="lightbox-image" src="" alt="">
+        <button class="lightbox-nav lightbox-next" type="button" aria-label="Next image">›</button>
+      </div>
+      <div class="lightbox-panel">
+        <h3 id="lightbox-title"></h3>
+        <p id="lightbox-caption"></p>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div id="cp-footer"></div>
 <script>
-(function(){var isIOS=/iPhone|iPad|iPod/i.test(navigator.userAgent),isAndroid=/Android/i.test(navigator.userAgent);function setIOS(id){var el=document.getElementById(id);if(!el)return;if(isIOS){el.href='itms-apps://apps.apple.com/us/app/compass-place/id6759469544';el.removeAttribute('target')}else{el.setAttribute('target','_blank')}}function setAndroid(id){var el=document.getElementById(id);if(!el)return;if(isAndroid){el.href='market://details?id=com.compassplace.app';el.removeAttribute('target')}else{el.setAttribute('target','_blank')}}setIOS('apple-store-btn');setIOS('apple-store-btn-bottom');setAndroid('android-store-btn');setAndroid('android-store-btn-bottom')})();
+(function(){
+  var isIOS=/iPhone|iPad|iPod/i.test(navigator.userAgent),isAndroid=/Android/i.test(navigator.userAgent);
+  function setIOS(id){var el=document.getElementById(id);if(!el)return;if(isIOS){el.href='itms-apps://apps.apple.com/us/app/compass-place/id6759469544';el.removeAttribute('target')}else{el.setAttribute('target','_blank')}}
+  function setAndroid(id){var el=document.getElementById(id);if(!el)return;if(isAndroid){el.href='market://details?id=com.compassplace.app';el.removeAttribute('target')}else{el.setAttribute('target','_blank')}}
+  setIOS('apple-store-btn');setIOS('apple-store-btn-bottom');setAndroid('android-store-btn');setAndroid('android-store-btn-bottom');
+
+  var slides=[
+    {src:'/images/app-comparison.png',alt:'Comparison screen',title:'Compare top matches side by side',caption:'See how communities stack up on care fit, distance, availability, and what matters most to your family.'},
+    {src:'/images/app-ranked-places.png',alt:'Ranked places screen',title:'Browse ranked places that fit your situation',caption:'Focus on the communities that best match your family’s needs instead of sorting through a generic list.'},
+    {src:'/images/app-trail-guide-opinions.png',alt:'Trail Guide opinions screen',title:'See local Trail Guide insight',caption:'Get expert perspective that helps you look beyond the brochure and know what to look for on tours.'},
+    {src:'/images/app-schedule-tour.png',alt:'Schedule a tour screen',title:'Request tours when you are ready',caption:'Take the next step without losing track of your options or feeling pushed before you are ready.'}
+  ];
+
+  var lightbox=document.getElementById('preview-lightbox');
+  var image=document.getElementById('lightbox-image');
+  var title=document.getElementById('lightbox-title');
+  var caption=document.getElementById('lightbox-caption');
+  var mobileCaption=document.getElementById('lightbox-mobile-caption');
+  var closeBtn=lightbox.querySelector('.lightbox-close');
+  var prevBtn=lightbox.querySelector('.lightbox-prev');
+  var nextBtn=lightbox.querySelector('.lightbox-next');
+  var thumbCards=document.querySelectorAll('.thumb-card');
+  var currentIndex=0;
+
+  function renderSlide(index){
+    currentIndex=(index+slides.length)%slides.length;
+    var slide=slides[currentIndex];
+    image.src=slide.src;
+    image.alt=slide.alt;
+    title.textContent=slide.title;
+    caption.textContent=slide.caption;
+    mobileCaption.textContent=slide.caption;
+  }
+
+  function openLightbox(index){
+    renderSlide(index);
+    lightbox.classList.add('active');
+    lightbox.setAttribute('aria-hidden','false');
+    document.body.style.overflow='hidden';
+  }
+
+  function closeLightbox(){
+    lightbox.classList.remove('active');
+    lightbox.setAttribute('aria-hidden','true');
+    document.body.style.overflow='';
+  }
+
+  thumbCards.forEach(function(card,index){card.addEventListener('click',function(){openLightbox(index);});});
+  prevBtn.addEventListener('click',function(){renderSlide(currentIndex-1);});
+  nextBtn.addEventListener('click',function(){renderSlide(currentIndex+1);});
+  closeBtn.addEventListener('click',closeLightbox);
+  lightbox.addEventListener('click',function(e){if(e.target===lightbox)closeLightbox();});
+  document.addEventListener('keydown',function(e){
+    if(!lightbox.classList.contains('active')) return;
+    if(e.key==='Escape') closeLightbox();
+    if(e.key==='ArrowLeft') renderSlide(currentIndex-1);
+    if(e.key==='ArrowRight') renderSlide(currentIndex+1);
+  });
+})();
 </script>
-</body></html>
+</body>
+</html>
